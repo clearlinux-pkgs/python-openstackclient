@@ -1,0 +1,117 @@
+From 26dc63476689d7cc66c7bb3b11c37ea021ae25fe Mon Sep 17 00:00:00 2001
+From: Victor Morales <victor.morales@intel.com>
+Date: Fri, 19 Jun 2015 10:42:15 -0500
+Subject: [PATCH] Added support to osprofiler
+
+It was included the instructions to enable osprofiler.
+
+Signed-off-by: Victor Morales <victor.morales@intel.com>
+---
+ openstackclient/common/clientmanager.py            |  2 ++
+ openstackclient/shell.py                           | 26 ++++++++++++++++++++++
+ openstackclient/tests/common/test_clientmanager.py |  1 +
+ requirements.txt                                   |  1 +
+ 4 files changed, 30 insertions(+)
+
+diff --git a/openstackclient/common/clientmanager.py b/openstackclient/common/clientmanager.py
+index 10f38c2..24a803c 100644
+--- a/openstackclient/common/clientmanager.py
++++ b/openstackclient/common/clientmanager.py
+@@ -90,6 +90,8 @@ class ClientManager(object):
+         self._auth_ref = None
+         self.session = None
+ 
++        self.profile = self._cli_options.profile
++
+         # verify is the Requests-compatible form
+         self._verify = verify
+         # also store in the form used by the legacy client libs
+diff --git a/openstackclient/shell.py b/openstackclient/shell.py
+index 3cfd731..120b253 100644
+--- a/openstackclient/shell.py
++++ b/openstackclient/shell.py
+@@ -23,6 +23,7 @@ import traceback
+ from cliff import app
+ from cliff import command
+ from cliff import help
++from oslo_utils import importutils
+ 
+ import openstackclient
+ from openstackclient.common import clientmanager
+@@ -31,6 +32,7 @@ from openstackclient.common import exceptions as exc
+ from openstackclient.common import timing
+ from openstackclient.common import utils
+ 
++osprofiler_profiler = importutils.try_import("osprofiler.profiler")
+ 
+ DEFAULT_DOMAIN = 'default'
+ 
+@@ -226,6 +228,18 @@ class OpenStackShell(app.App):
+             help="Print API call timing info",
+         )
+ 
++        if osprofiler_profiler:
++            parser.add_argument('--profile',
++                                metavar='HMAC_KEY',
++                                default=None,
++                                help='HMAC key to use for encrypting context '
++                                'data for performance profiling of operation. '
++                                'This key should be the value of HMAC key '
++                                'configured in osprofiler middleware. Without '
++                                'key the profiling will not '
++                                'be triggered even if osprofiler is enabled '
++                                'on server side.')
++
+         return clientmanager.build_plugin_option_parser(parser)
+ 
+     def initialize_app(self, argv):
+@@ -306,6 +320,11 @@ class OpenStackShell(app.App):
+                 self.client_manager.auth_ref
+             except Exception:
+                 pass
++
++        profile = osprofiler_profiler and cmd.app_args.profile
++        if profile:
++            osprofiler_profiler.init(cmd.app_args.profile)
++
+         return
+ 
+     def clean_up(self, cmd, result, err):
+@@ -337,6 +356,13 @@ class OpenStackShell(app.App):
+             targs = tparser.parse_args(['-f', format])
+             tcmd.run(targs)
+ 
++        profile = osprofiler_profiler and cmd.app_args.profile
++        if profile:
++            trace_id = osprofiler_profiler.get().get_base_id()
++            print("Trace ID: %s" % trace_id)
++            print("To display trace use next command:\n"
++                  "osprofiler trace show --html %s " % trace_id)
++
+ 
+ def main(argv=sys.argv[1:]):
+     return OpenStackShell().run(argv)
+diff --git a/openstackclient/tests/common/test_clientmanager.py b/openstackclient/tests/common/test_clientmanager.py
+index 3648bf5..0c6ae01 100644
+--- a/openstackclient/tests/common/test_clientmanager.py
++++ b/openstackclient/tests/common/test_clientmanager.py
+@@ -51,6 +51,7 @@ class FakeOptions(object):
+         self.os_region_name = None
+         self.os_url = None
+         self.os_default_domain = 'default'
++        self.profile = None
+         self.__dict__.update(kwargs)
+ 
+ 
+diff --git a/requirements.txt b/requirements.txt
+index 15024d4..8041f11 100644
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -18,3 +18,4 @@ python-cinderclient>=1.1.0,<1.2.0
+ python-neutronclient>=2.3.11,<2.5.0
+ requests>=2.2.0,!=2.4.0
+ stevedore>=1.3.0,<1.4.0  # Apache-2.0
++osprofiler>=0.3.0
+-- 
+2.1.0
+
