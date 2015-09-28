@@ -73,3 +73,4 @@ traceback2-python
 unittest2-python
 warlock-python
 WebOb-python
+os-client-config-python
