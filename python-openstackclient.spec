@@ -4,12 +4,14 @@
 #
 Name     : python-openstackclient
 Version  : 1.7.0
-Release  : 14
+Release  : 15
 URL      : http://tarballs.openstack.org/python-openstackclient/python-openstackclient-1.7.0.tar.gz
 Source0  : http://tarballs.openstack.org/python-openstackclient/python-openstackclient-1.7.0.tar.gz
 Summary  : OpenStack Command-line Client
 Group    : Development/Tools
 License  : Apache-2.0
+Requires: python-openstackclient-bin
+Requires: python-openstackclient-python
 BuildRequires : Babel-python
 BuildRequires : Jinja2-python
 BuildRequires : Pygments-python
@@ -102,6 +104,35 @@ OpenStackClient (aka OSC) is a command-line client for OpenStack that brings
 the command set for Compute, Identity, Image, Object Store and Volume APIs
 together in a single shell with a uniform command structure.
 
+%package bin
+Summary: bin components for the python-openstackclient package.
+Group: Binaries
+
+%description bin
+bin components for the python-openstackclient package.
+
+
+%package python
+Summary: python components for the python-openstackclient package.
+Group: Default
+Requires: Babel-python
+Requires: cliff-python
+Requires: cliff-tablib-python
+Requires: os-client-config-python
+Requires: oslo.i18n-python
+Requires: oslo.utils-python
+Requires: python-cinderclient-python
+Requires: python-glanceclient-python
+Requires: python-keystoneclient-python
+Requires: python-neutronclient-python
+Requires: python-novaclient-python
+Requires: requests-python
+Requires: six-python
+
+%description python
+python components for the python-openstackclient package.
+
+
 %prep
 %setup -q -n python-openstackclient-1.7.0
 %patch1 -p1
@@ -120,3 +151,11 @@ python2 -tt setup.py build -b py2 install --root=%{buildroot}
 
 %files
 %defattr(-,root,root,-)
+
+%files bin
+%defattr(-,root,root,-)
+/usr/bin/openstack
+
+%files python
+%defattr(-,root,root,-)
+/usr/lib/python*/*
