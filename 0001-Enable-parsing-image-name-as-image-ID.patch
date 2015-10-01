@@ -1,4 +1,4 @@
-From b4028a0454adcc7895530fa2ef34ba86ca0f931d Mon Sep 17 00:00:00 2001
+From 39ddcd630cba3414b26f99c9e24afa53e7244f5e Mon Sep 17 00:00:00 2001
 From: William Douglas <william.douglas@intel.com>
 Date: Thu, 1 Oct 2015 15:42:11 -0700
 Subject: [PATCH] Enable parsing image name as image ID
@@ -6,8 +6,9 @@ Subject: [PATCH] Enable parsing image name as image ID
 In order to avoid extra calls to the API to list images, enable a syntax
 for passing the image ID that will be used directy by the novaclient.
 ---
- openstackclient/compute/v2/server.py | 16 +++++++++++-----
- 1 file changed, 11 insertions(+), 5 deletions(-)
+ openstackclient/compute/v2/server.py            | 16 +++++++++++-----
+ openstackclient/tests/compute/v2/test_server.py |  3 +++
+ 2 files changed, 14 insertions(+), 5 deletions(-)
 
 diff --git a/openstackclient/compute/v2/server.py b/openstackclient/compute/v2/server.py
 index 661ce84..54fd1bf 100644
@@ -44,6 +45,34 @@ index 661ce84..54fd1bf 100644
  
          self.log.debug('boot_args: %s', boot_args)
          self.log.debug('boot_kwargs: %s', boot_kwargs)
+diff --git a/openstackclient/tests/compute/v2/test_server.py b/openstackclient/tests/compute/v2/test_server.py
+index 4df18f0..7d62e95 100644
+--- a/openstackclient/tests/compute/v2/test_server.py
++++ b/openstackclient/tests/compute/v2/test_server.py
+@@ -128,6 +128,7 @@ class TestServerCreate(TestServer):
+             nics=[],
+             scheduler_hints={},
+             config_drive=None,
++            image_id=False,
+         )
+         # ServerManager.create(name, image, flavor, **kwargs)
+         self.servers_mock.create.assert_called_with(
+@@ -204,6 +205,7 @@ class TestServerCreate(TestServer):
+                    'port-id': 'port1_uuid'}],
+             scheduler_hints={},
+             config_drive=None,
++            image_id=False,
+         )
+         # ServerManager.create(name, image, flavor, **kwargs)
+         self.servers_mock.create.assert_called_with(
+@@ -269,6 +271,7 @@ class TestServerCreate(TestServer):
+             nics=[],
+             scheduler_hints={},
+             config_drive=None,
++            image_id=False,
+         )
+         # ServerManager.create(name, image, flavor, **kwargs)
+         self.servers_mock.create.assert_called_with(
 -- 
 2.5.0
 
