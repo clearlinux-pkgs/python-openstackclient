@@ -4,7 +4,7 @@
 #
 Name     : python-openstackclient
 Version  : 1.7.0
-Release  : 13
+Release  : 14
 URL      : http://tarballs.openstack.org/python-openstackclient/python-openstackclient-1.7.0.tar.gz
 Source0  : http://tarballs.openstack.org/python-openstackclient/python-openstackclient-1.7.0.tar.gz
 Summary  : OpenStack Command-line Client
