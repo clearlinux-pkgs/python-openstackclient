@@ -1,0 +1,49 @@
+From b4028a0454adcc7895530fa2ef34ba86ca0f931d Mon Sep 17 00:00:00 2001
+From: William Douglas <william.douglas@intel.com>
+Date: Thu, 1 Oct 2015 15:42:11 -0700
+Subject: [PATCH] Enable parsing image name as image ID
+
+In order to avoid extra calls to the API to list images, enable a syntax
+for passing the image ID that will be used directy by the novaclient.
+---
+ openstackclient/compute/v2/server.py | 16 +++++++++++-----
+ 1 file changed, 11 insertions(+), 5 deletions(-)
+
+diff --git a/openstackclient/compute/v2/server.py b/openstackclient/compute/v2/server.py
+index 661ce84..54fd1bf 100644
+--- a/openstackclient/compute/v2/server.py
++++ b/openstackclient/compute/v2/server.py
+@@ -369,11 +369,16 @@ class CreateServer(show.ShowOne):
+ 
+         # Lookup parsed_args.image
+         image = None
++        image_id = False
+         if parsed_args.image:
+-            image = utils.find_resource(
+-                compute_client.images,
+-                parsed_args.image,
+-            )
++            if parsed_args.image[:3] == "id:":
++                image = parsed_args.image[3:]
++                image_id = True
++            else:
++                image = utils.find_resource(
++                    compute_client.images,
++                    parsed_args.image,
++                )
+ 
+         # Lookup parsed_args.volume
+         volume = None
+@@ -503,7 +508,8 @@ class CreateServer(show.ShowOne):
+             block_device_mapping=block_device_mapping,
+             nics=nics,
+             scheduler_hints=hints,
+-            config_drive=config_drive)
++            config_drive=config_drive,
++            image_id=image_id)
+ 
+         self.log.debug('boot_args: %s', boot_args)
+         self.log.debug('boot_kwargs: %s', boot_kwargs)
+-- 
+2.5.0
+
