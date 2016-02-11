@@ -1,21 +1,167 @@
 CHANGES
 =======
 
+2.1.0
+-----
+
+* Minor typo in help text
+* Fix a spell typos
+* Add --marker option to "image list" command
+* Add limit option to "image list" command
+* Remove marker and loop from "image list" command
+* Trivial: Reorder test class in test_volume.py into alphabetical order
+* Fix wrong type of volume attachments in FakeVolume
+* Refactor TestVolumeCreate to use FakeVolume
+* Refactor security group delete to use SDK
+* Add "os port show" command
+* Support listing network availability zones
+* Trivial: Fix wrong comment in test_image.py
+* Network: Abstract get_body() out to be a private helper
+* Drop log_method decorator
+* Updated from global requirements
+* Consume openstackclient.common.command in subnet/port
+* Fix showing network quotas for a project
+* Add missing release notes
+* log take_action parameters in a single place
+* Revert "Skip identity v2 functional tests"
+* Skip identity v2 functional tests
+* Add availability zone support for router commands
+* Update translation setup
+* Add availability zone support for network commands
+* Allow wait_for_delete to work for all clients
+* Updated from global requirements
+* Remove the Tuskar client
+* Use correct terminology for subnets
+* Updated from global requirements
+* Add releasenote for 'subnet list' command support
+* Add router functional tests
+* Subnet List
+* Updated from global requirements
+* Refactor abstract columns and datalist out in image and object test cases
+* Updated from global requirements
+* Refactor abstract columns and datalist out in compute test cases
+* log_method: get logger from decorated method if unspecified
+* Set up logger of each command by metaclass
+* Refactor: Abstract columns and datalist out in volume test cases
+* Add support to delete the ports
+* Initialize activation status
+* Imported Translations from Zanata
+* Updated from global requirements
+* Doc: Network is supported for extension object
+* Change --owner to --project in image commands
+* Support listing volume availability zones
+* Refactor "os availability zone list"
+* Changed the abstract columns and datalists from test cases of common and Identity
+* Updated from global requirements
+* Support non-interactive user password update
+* Use assertTrue/False instead of assertEqual(T/F)
+* Replace assertEqual(*, None) with assertIsNone in tests
+* Updated from global requirements
+* Further improve output for "os security group show"
+* Delete the unused LOG configure code
+* Refactor network endpoint enablement checking
+* Implementation for project unset cmd for python-openstackclient
+* Enabling domain lookup for project set v3 command
+* Docstring should say 'default' if option is default
+* Trivial: Remove useless string_to_bool()
+* Refactor: Initialize parser in setUp() in TestNonNegativeAction
+* Refactor: Initialize parser in setUp() in TestKeyValueAction
+* Replace assertEqual(None, *) with assertIsNone(*)
+* Functional tests for security group rule
+* Improve output for "os security group show"
+* Add all regions to cloud configuration
+* Updated from global requirements
+* Add owner validation for "openstack image create/set"
+* TestServerGeneral: Add test for _prep_server_detail()
+* TestServerGeneral: Add test for _format_servers_list_networks()
+* Trivial: Remove useless return from files in image and volume
+* Trivial: Remove useless return from files in network
+* Add support to list all security group rules
+* Replace assertEqual(None, *) with assertIsNone in tests
+* Trivial: Remove useless return from files in compute
+* Add image re/deactivate commands
+* Router: Add "router show" command using SDK
+* Router: Add "router set" command using SDK
+* Refactor TestImageCreate with FakeImage class
+* Updated from global requirements
+* Router: Add "router delete" command using SDK
+* Network: Improve no option test for "network create"
+* Router: Add "router create" command using SDK
+* Remote security group name not displayed for rule
+* when fetching object store properties use lower()
+* Removes MANIFEST.in as it is not needed explicitely by PBR
+* Updated from global requirements
+* Deprecated tox -downloadcache option removed
+* Router: Add "router list" command using SDK
+* Router: Add class FakeRouter to test "router xxx" command
+* Trivial: Improve unclear comments in test_server.py
+* Make --image parameter optional in "server rebuild"
+* Trivial: Fix parameter name typo in network.rst
+* Trivial: Do not use plural format in command parameter in "network delete"
+* Map some of the SDK field names
+* TestServerGeneral: Add test for _format_servers_list_power_state()
+* Remove python-neutronclient requirement
+* Fix poorly named test mocks
+* Remove old code after sdk integration
+* SDK integration extensions and server create networks
+* Add unit test for TestServerList to test --long option
+* Add multi deletion testcase for "openstack image delete"
+* Refactor TestImageDelete with FakeImage
+* Remove unuseful test data in test_netwrok.py
+* Migrate network client to SDK
+* Migrate "network show" command to use SDK
+* Migrate "network set" command to use SDK
+* Migrate "network delete" command to use SDK
+* Migrate "network create" command to use SDK
+* Fix "sevice show" cannot catch NoUniqueMatch Exception
+* The format_exc method does not take an exception
+* Migrate "network list" command to new version using SDK
+* Trivial: Coding style fix in test_flavor.py
+* Use FakeVolume in server test cases
+* Use FakeImage in server test cases
+* Add source security group support to create rule
+* SDK integration: Add a temporary method to create network client using sdk
+* Introduce class FakeNetwork to fake one or more networks
+* Use formatter in server.py for "server list" tests
+* Updated from global requirements
+* Trivial: Import network.common as network_common in server.py
+* Refactor network test: Remove unusful test code
+* Refactor TestShowNetwork: Use TestNetwork in TestShowNetwork
+* Refactor TestSetNetwork: Use TestNetwork in TestSetNetwork
+* Refactor TestListNetwork: Use TestNetwork in TestListNetwork
+* Refactor TestDeleteNetwork: Use TestNetwork in TestDeleteNetwork
+* Refactor TestCreateNetwork: Setup identity client in setUp() in TestCreateNetworkIdentityV2
+* Refactor TestCreateNetwork: Setup identity client in setUp() in TestCreateNetworkIdentityV3
+* Refactor TestCreateNetwork: Setup cmd in setUp() in TestCreateNetworkIdentityV2
+* Refactor TestCreateNetwork: Setup cmd in setUp() in TestCreateNetworkIdentityV3
+* Refactor TestCreateNetwork: Split TestCreateNetwork into two classes for identity v2 and v3
+* Refactor network test: Introduce TestNetworkv2 and TestNetwork to improve unit test of network
+* Trivial: Remove unuseful doc of "network list" command
+* Trivial: Improve doc for "server create" command
+* Updated from global requirements
+* Fix exception when doing volume set operation
+
 2.0.0
 -----
 
 * Trivial: Reorder doc of "server shelve" command to keep alphabetic order
 * Convert 2.0 release notes to reno format
 * Add reno for release notes management
+* Add multi deletion testcase for openstack volume delete
 * Add class TestServerList to provide basic unit test for "server list" command
 * Enable setup_servers_mock() to take attributes param
+* Introduce FakeImage class
 * Switch to ksa Session
 * Add release notes for 2.0.0
+* Support "server list" searching by both image name and ID
+* Support "server list" searching by both flavor name and ID
 * autodocument commands from plugins using stevedore.sphinxext
+* Remove list output from "compute service set"
 * Add --limit option to "server list" command
 * Add --marker option to "server list" command
 * Updated from global requirements
 * Add a changelog to see all changes into tagged releases
+* Integrating mistralclient with openstackclient
 * Add testcases for compute.v2.service
 * Consistency of the --all argument for snapshots
 * Introduce FakeVolume class
@@ -35,6 +181,7 @@ CHANGES
 * Refactor: Abstract columns out in TestFlavorList to avoid redundant code
 * Add "openstack server unshelve" into OSC
 * Fix a bug of "openstack volume delete"
+* Use Block Storage instead of Volume
 * Add unit tests for "server stop" command
 * Add unit tests for "server start" command
 * Add unit tests for "server resume" command
@@ -70,6 +217,7 @@ CHANGES
 * Add command wrapper doc
 * Trivial: Remove doc for non-existing param in format_dict()
 * Unable to set some compute quotas
+* Add --volume to Image `create`
 * Have configuration tests support OCC
 * Add unit tests for "server pause" command
 * Introduce random server faking mechanism
