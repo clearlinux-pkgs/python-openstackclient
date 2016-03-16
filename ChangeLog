@@ -1,9 +1,121 @@
 CHANGES
 =======
 
+2.2.0
+-----
+
+* Fix test_aggregate functional test
+* Updated from global requirements
+* Trivial: Reorder unit tests in alphabetical order in volume tests
+* [Image] Check return value is None in image unit tests
+* Support "network create" command in nova network
+* Devref: Options with Choices
+* Clean up unnecessary import of urlparse module
+* Trivial: Update image_list v2 docs
+* Fix regression in interactive client mode
+* Fix 'code-block' tag format issues
+* TrivialOrder: Rearrange Class Names
+* add a checklist for creating a new plugin
+* Trivial: Reorder flavor op order in flavor.py
+* Subnet: Add "subnet delete" command using SDK
+* fix: Exception message includes unnecessary class args
+* Refactor security group list to use SDK
+* take_action() method from command.Command shouldn't return
+* Trivial: Reorder unit tests in test_type.py
+* Fix return value of "image set" command
+* [Compute] Check return value is None in compute unit tests
+* Router: Add --route and --clear-routes options to "router set" command
+* Add MultiKeyValueAction to custom parser action
+* Make SetAggregate inherit from cliff.Command
+* Make SetAgent inherit from cliff.Command
+* Make SetSecurityGroup inherit from cliff.Command
+* Make SetFlavor and UnsetFlavor inherit from cliff.Command
+* Add missing command/configuration object
+* Updated from global requirements
+* Add shell --profile option to trigger osprofiler from CLI
+* update heat object and command doc
+* Add some test cases for "server list" command
+* Floating IP: Neutron support for "ip floating show" command
+* Improve tox to show coverage report on same window
+* Py3 replace dict.iteritems with six.iteritems
+* Updated from global requirements
+* Defaults are ignored with flake8
+* Fixed a bunch of spacing
+* Add "security group rule show" command
+* Fix wrong return value in TestDeleteFloatingIPNetwork
+* Use update_parser_common() in ShowNetwork
+* Use instanceof instead of type
+* Add "os subnet show" command using SDK
+* Initialize _keys in __init__() in FakeFlavorResource
+* Add unit tests for 'hypervisor stats' command
+* Clean redundant argument to dict.get
+* Add functional tests for "volume" commands v2
+* Add functional tests for "image" command v2
+* Updated from global requirements
+* Add unit test for "flavor show" command
+* Refactor: Set "project_id" for FakeXXX in a consistent style
+* Fix Mutable default argument
+* gitignore .idea
+* Trivial: Rename subnet_pool.rst to subnet-pool.rst
+* Replace string format arguments with function parameters
+* Support unscoped token request
+* Use assertIsNone() instead of assertEqual(None, xxx)
+* Don't use Mock.called_once_with that does not exist
+* Floating IP: Fix "ip floating list" in neutron network
+* Subnet Pool: Add "subnet pool show" command
+* Subnet Pool: Add "subnet pool list" command
+* Remove unused test-requirments
+* Subnet Pool: Add "subnet pool delete" command
+* Support "network show" command in nova network
+* Support "network list" command in nova network
+* Add release note for "network delete" command for nova network
+* Define FakeFloatingIP class in tests/compute for nova network commands
+* Add release note for "ip floating delete/list" commands for neutron network
+* Fix 'openstack --help' fails if clouds.yaml cannot be read
+* Rename parameter "identifier" to "network" in network commands
+* Use assertRaises() to check if an exception is raised
+* Support "network delete" command in nova network
+* Floating IP: Neutron support for "ip floating list" command
+* Floating IP: Neutron support for "ip floating delete" command
+* Updated from global requirements
+* Add quota functional tests
+* Add NetworkAndCompute Lister and ShowOne classes
+* Fix identity test_role functional tests
+* Trivial: Fix a typo in test_network.py
+* Updated from global requirements
+* Refactor network AZ exception handling
+* Refactor security group rule delete to use SDK
+* Identity: Fix DisplayCommandBase comments for cliff ShowOne subclass tests
+* Identity: Fix DisplayCommandBase comments for cliff Lister subclass tests
+* Identity: Fix DisplayCommandBase comments for cliff Command subclass tests
+* Trivial: Fix "abstractmethod" to "abstract method"
+* Fix DisplayCommandBase comments for cliff ShowOne subclass tests
+* Add "token revoke" for identity v3
+* Fix DisplayCommandBase comments for cliff Lister subclass tests
+* Fix DisplayCommandBase comments for cliff Command subclass tests
+* Updated from global requirements
+* Add release note for custom logging feature
+* Add release note for recursive delete
+* Add unit tests for "hypervisor show" command
+* Compute: Fix DisplayCommandBase comments for cliff ShowOne subclass tests
+* Compute: Fix DisplayCommandBase comments for cliff Lister subclass tests
+* Compute: Fix DisplayCommandBase comments for cliff Command subclass tests
+* Remove identity_client.projects definition in TestSecurityGroup
+* Define security_group_rules mock in FakeComputev2Client
+* Move security_groups mock definition to FakeComputev2Client
+* Fix formatting in release 2.0.0 notes
+* Fix some release note formatting
+* Add recursive object delete for containers
+* Refactor security group functional tests
+* Add functional tests for snapshots
+* Add support for triggering an crash dump
+* Add unit tests for "hypervisor list" command
+* Allow custom log levels for other loggers
+
 2.1.0
 -----
 
+* Use assert_not_called() in common tests
 * Minor typo in help text
 * Fix a spell typos
 * Add --marker option to "image list" command
@@ -30,6 +142,7 @@ CHANGES
 * Add availability zone support for network commands
 * Allow wait_for_delete to work for all clients
 * Updated from global requirements
+* Return names in list role assignments
 * Remove the Tuskar client
 * Use correct terminology for subnets
 * Updated from global requirements
@@ -39,6 +152,7 @@ CHANGES
 * Updated from global requirements
 * Refactor abstract columns and datalist out in image and object test cases
 * Updated from global requirements
+* Add python-searchlightclient to list of adopters
 * Refactor abstract columns and datalist out in compute test cases
 * log_method: get logger from decorated method if unspecified
 * Set up logger of each command by metaclass
@@ -89,6 +203,7 @@ CHANGES
 * Router: Add "router create" command using SDK
 * Remote security group name not displayed for rule
 * when fetching object store properties use lower()
+* Doc: Add optional command specs process
 * Removes MANIFEST.in as it is not needed explicitely by PBR
 * Updated from global requirements
 * Deprecated tox -downloadcache option removed
