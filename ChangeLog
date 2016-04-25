@@ -1,20 +1,158 @@
 CHANGES
 =======
 
-2.3.0
+2.4.0
 -----
 
+* Rename --profile to --os-profile
 * Updated from global requirements
-* Update .gitreview for stable/mitaka
+* Fix client certificate/key support for Network v2 commands
+* Imported Translations from Zanata
+* Add provider network options to osc network set
+* Clean up for next release
+* Add options to security group rule list
+* Initialize neutron client with region name
+* Updated from global requirements
+* Remove methods argument from vloume/v2/fakes.py
+* State i18() changes and help messages improved
+* Add support for removing volume-type-access
+* Fix wrong attribute name and add functional test for --snapshot
+* Remove methods argument from FakeHypervisorStats
+* Propagate AttributeErrors when lazily loading plugins
+* Add external network options to osc network set
+* Trivial: Fix incorrect comment text
+* Append existing information during port set
+* Use CommandFailed exception from tempest_lib
+* Updated from global requirements
+* Fix prefixes output for subnet pool list
+* Doc: Unify repeatable option comments
+* Remove fake methods code from compute network
+* Add Testing Ref in README.rst
+* Add project options to security group rule create
+* Add network options to security group rule create
+* Add support for setting volume-type-access
+* Move keys() methods in each resource class to FakeResource
+* Add --address-scope option "subnet pool create/set"
+* Fix pep8 fail that crept in
+* use correct manager for volume snapshots
+* Fix SSL/TLS verification for network commands
+* Doc: Fix network command documentation issues
+* Append existing information during subnet set
+* TrivialFix: Rename provider segment option
+* Updated from global requirements
+* Updated from global requirements
+* Clean up release notes since 2.2.0 release
+* TrivialFix: Fix help messages for port set
+* Add option to clear information from ports
+* Make snapshot and backup name optional
+* Prefer assertEqual/assertIn over assertOutput/assertInOutput
+* Correct addCleanup use in functests
+* Support client certificate/key
+* Add provider network options to osc network create
+* Add external network options to osc network create
+* Fix typos in docstrings and comments
+* Improve tmpfile cleanup in functests
+* Remove unused method cleanup_tmpfile
+* Use fixtures and addCleanup instead of tearDown
+* Log hint when --enable present with --disable-reason
+* Trivial: Rename FakehypervisorStats to FakeHypervisorStats
+* Add name option to 'port set'
+* rxtx factor should be a float
+* Don't mask authorization errors
+* Add default value to pool-prefix in Subnet-pool
+* Devref: Options with Multiple Values
+* Doc: Add missing command objects
+* Add --project to "subnet pool create"
+* Follow Boolean Option rule
+* Add fixed keypair create functional test
+* Fix subnet pool prefix length option
+* Wrong param type in compute-service.rst
+* Remove unused method 'from_response'
+* Aggregate object should be "grouping of compute hosts"
+* Docs cleanup: volume command help
+* Docs cleanup: volume type
+* Docs cleanup: sort subnet commands
+* Refactor security group rule list to use SDK
+* Added functional tests for 'service provider' v3 commands
+* Add unit tests for compute v2 aggregate
+* Add "aggregate unset" to osc
+* Subnet: Add "subnet set" command using SDK
+* [Floating IP] Neutron support for "ip floating create" command
+* Support security group name for --src-group
+* Refactor security group rule create to use SDK
+* Trivial: Fix typo in common/limits.py
+* Fix "server unset" document issue
+* Use assert_called_once_with() instead of assert_called_with()
+* Add Subnet add/remove support to router
+* Remove superfluous variable assignment statements
+* Style fix for one line docstring according to flake8
+* Add "router remove port" to osc
+* Add "router add port" to osc
+* Updated from global requirements
+* Image API v2: make volume_type optional
+* Improve error for token issue command without auth
+* Devref: Document OSC interfaces available to plugins
+* Fix keypair create --public-key
+* Functional tests for openstackclient help messages
+* Trivial-Fix : Add a ' to the choices documentation
+* update docs with status of plugins
+* Fix options in port create/set
+* Updated from global requirements
+* Add option to allow filtering by router on port list
+* Add support for deleting Image-property
+* Add support for setting Image-property
+* Sort commands in docs
+* Doc: Fix documentation errors for command object
+* Support "--long" option in ListService
+* Use assertItemsEqual() instead of assertListEqual()
+* Trivial: Add release note for "subnet pool create" command
+* Fix dict.keys() compatibility for python 3
+* Add doc describing how to handle API errors
+* Add project options to security group create
+* Add incompatibility info for "ip floating list" command
+* Enhance list extension unit test
+* Trivial: Reorder classes in identity v3 in alphabetical order
+* Update reno for stable/mitaka
+* Add "os subnet create" command using SDK
+* Refactor security group create to use SDK
+* Refactor security group show to use SDK
+* Add subnet pool functional tests
+* Fixed command list
+* Trivial: Use 'SSH' rather than 'Ssh'
+* [Identity] Check return value is None in identity v3 unit tests
+* Add --reason for disable service
+* Remove FakeFlavorResource class
+* Add port functional tests
+* Add 'port set' command
+* [Subnet pool] Add 'subnet pool create' command support
+* [Subnet pool] Add 'subnet pool set' command support
+* Trivial: Fix incorrect comments in compute fakes.py
+* remove py26 workaround in osc
+* [Identity] Check return value is None in identity v3 unit tests
+* Add port list command
+* Trivial: Remove useless return
+* Use _get_columns() to obtain columns in network.py
+* Add release note for security group set refactor
+* Test take_action() instead of run() in unit tests
+* Updated from global requirements
+* Add 'port create' command
+* Add subnet functional tests
+* Updated from global requirements
+* Updated from global requirements
+* " openstack server image create " doesn't print proper info
 
 2.2.0
 -----
 
 * Fix test_aggregate functional test
+* [Volume] Check return value is None in volume unit tests
+* Fix incorrect unit test for router
+* Refactor security group set to use SDK
 * Updated from global requirements
 * Trivial: Reorder unit tests in alphabetical order in volume tests
 * [Image] Check return value is None in image unit tests
 * Support "network create" command in nova network
+* Add test cases to test some commands with '--wait' and fix bug
 * Devref: Options with Choices
 * Clean up unnecessary import of urlparse module
 * Trivial: Update image_list v2 docs
@@ -38,6 +176,7 @@ CHANGES
 * Make SetFlavor and UnsetFlavor inherit from cliff.Command
 * Add missing command/configuration object
 * Updated from global requirements
+* [compute] Add set host command
 * Add shell --profile option to trigger osprofiler from CLI
 * update heat object and command doc
 * Add some test cases for "server list" command
@@ -50,6 +189,8 @@ CHANGES
 * Add "security group rule show" command
 * Fix wrong return value in TestDeleteFloatingIPNetwork
 * Use update_parser_common() in ShowNetwork
+* [compute] Support restore server
+* [compute] Add unit test for keypair
 * Use instanceof instead of type
 * Add "os subnet show" command using SDK
 * Initialize _keys in __init__() in FakeFlavorResource
@@ -468,7 +609,7 @@ CHANGES
 * Automate flavors, networks, and image get
 * unwedge the osc gate
 * additional functional tests for identity providers
-* Adds documentation on weekly meeting
+* Adds documentation  on weekly meeting
 * Update the plugin docs for designate
 * Added note to install openstackclient
 * Override the debug default and help text
@@ -1346,7 +1487,7 @@ CHANGES
 * Adding HACKING doc to project
 * Change binary name to 'openstack'
 * Auto generate AUTHORS for python-openstackclient
-* Adding name to Authors and updating a bad URL. More to get my gerrit workflow up
+* Adding name to Authors and updating a bad URL.  More to get my gerrit workflow up
 * Shell init & logging
 
 0.1
