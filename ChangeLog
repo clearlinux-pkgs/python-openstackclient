@@ -1,6 +1,331 @@
 CHANGES
 =======
 
+3.9.0
+-----
+
+* Updated from global requirements
+* Cleanup release notes for 3.9.0 release
+* Trivial Fix
+* add neutron CLI to decoder
+* Normalize the gnocchiclient docs entry
+* Trivial Fix
+* Updated from global requirements
+* Jsonify network flavor functional tests
+* Nit: Trivial doc formatting fix for network flavor
+* Updated from global requirements
+* Update doc/source/command-objects/image.rst
+* Port set/unset SecGroup Bug Fix
+* Fix output of ListSecurityGroupRule
+* openstack image create : --file and --volume exclude each other
+* Fix can not set is_default in network
+* Support --no-property in "volume set" command
+* Revert unit tests for quota commands
+* Support list commands by group name keyword
+* Auto allocated topology for OSC
+* minor tweaks to mapping table
+* add keystone and glance -> osc mapping
+* Fix "endpoint list" help message
+* Show openstacksdk version info in "module list"
+* OSC Network Flavor
+* Fix properties format for volume qos in volume v1
+* Rework port functional tests on json output format
+* add volume->osc mapping
+* add swift and nova to osc mapping
+* Add Cinder v3 client support for volumes
+* TODO cleanup: osc-lib
+* Remove text about OSC as a plugin requirement
+* Remove unused logging import
+* Remove remaining uses of SDK Proxy.session
+* Finish converting server functional tests to JSON format
+* Remove quota set workaround for SDK <0.9.13
+* Fix image selection in server function tests
+* Fix "server create" command failed when --nic auto or none
+* Use public and unified method get_console_url()
+* Handle log message interpolation by the logger in compute/
+* Handle log message interpolation by the logger in network/
+* Handle log message interpolation by the logger in identity/
+* Updated from global requirements
+* Overwrite/Clear Flavor property
+* Refactor volume functional test in volume v1
+* Updated from global requirements
+* Updated from global requirements
+* Modify error handling for role and group commands
+* Fix --parents and --children options in project show
+* Add --fixed-ip option to the port list command
+* Fix wrong behavior of parsing plugin service name
+* Fix "module list --all" failed
+* NIT: replace os with openstack in command example
+* mention the final ocata osc version in releasenotes
+* TODO cleanup: OSC_Config
+* Add mitaka release notes to master
+* Update reno for stable/ocata
+
+3.8.1
+-----
+
+* Add relnotes for the two recent bug fixes
+* Fix network create --project
+* Fix address scope list --share
+
+3.8.0
+-----
+
+* Fix sphinx errors
+* Updated from global requirements
+* Cleanup for 3.8.0 release
+* Switch server create to block_device_mapping_v2
+* Support "--no-property" option in volume snapshot set
+* Adds domain specification for SetUser
+* Add options to "server list" command
+* Fix Identity functional tests to not require OS_AUTH_URL
+* change assert_show_fields to not fail on new fields
+* Add server_boot_from_volume() test
+* Fix 'mapping set' return value
+* Add server test for image and flavor lookups
+* Updated from global requirements
+* Use image client for images instead of compute
+* Update container format choices
+* Handle 403 error on creating trust
+* SDK refactor: Prepare security group commands
+* Add meter rule to OSC
+* Update devref about "--no-property"
+* Fix OSC networking commands help errors
+* Functional tests debug support
+* Fix functional test for creating subnet
+* Functional test for router
+* Functional test for subnet
+* Functional test for volume qos
+* Remove the fixed set of choices for network_type
+* Add plugin adoption for trove
+* Error in the return of command server show, create
+* Error in the return of command 'volume qos create'
+* Functional test for volume snapshot
+* Update functional test for aggregate
+* Updated from global requirements
+
+3.7.0
+-----
+
+* Release 3.7.0 cleanup
+* Fix quota set command error for SDK > 0.9.10
+* SDK refactor: Prepare network agent commands
+* Updated from global requirements
+* unskip port test
+* Use git+file urls instead of directories
+* Fix quota show --default command
+* Fix network functional tests for sdk 0.9.12
+* Fix floating IP delete and show by IP
+* Add "encryption-*" options in volume type commands
+* Fix subnet creating failure in functional test
+* fix functional tests for network agents
+* Fix security group rule list for NEtwork v2
+* Install from /opt/stack/new instead of git.o.o
+* Fix quota show output
+* unskip network qos rule type functional test
+* Fix image member unit tests occasional failures
+* Fix flavor create help re swap size units
+* Fix Network QoS rule CLI attrs parsing
+* Add unit test for multi volume types delete
+* add support for running tests with master dependencies
+* Updated from global requirements
+* Add support for Network QoS rule commands
+* Make 'object save' fast again
+* Fix Octavia gate breakage caused by _get_columns()
+* functional test for volume
+* Fix port command for SDK >0.9.10
+* Fix filter error in os volume list
+* Add --project and --project-domain option to "volume snapshot list"
+* add domain id to expected IdP fields, unskip tests
+* skip tests related to SDK 0912 and keystone IdP change
+* Functional tests - flavor
+* Add options to allow filtering on agent list
+* Fix network service provider functional test
+* Fix "ip availability show" command
+* Updated from global requirements
+* Fix creating a private flavor with ID auto
+* Functional tests - port
+* Add support for Glance 'update image members' feature
+* Fixes image api URL endpoint for certain scenario
+* Remove unneeded methods from OS_Config class
+* Error handling for delete commands in identity
+* Update the description format
+* Add ":option:` `" in the help message
+* OSC Network Meter
+* Beef up floating IP functional tests
+* Beef up address scope functional tests
+* Beef up network functional tests
+* update server migrate '--wait' description
+* Revert "WIP: Skip broken functional tests..."
+* Updated from global requirements
+* Fix a spelling error
+* Fix typo in release notes
+* Add unit tests for usage commands in compute v2
+* Test-requirements.txt: Bump Hacking to 0.12
+* Updated from global requirements
+* WIP: Skip broken functional tests..
+* To support '--project' and '--project-domain' options
+* Add support for QoS rule type commands
+* Update earliest-version number format in release notes
+* Should support 'auto' and 'none' as network parameter when boot instances
+* Fix all missing "os to openstack" transformation
+* Add '--type'and other options to network rbac list
+
+3.6.0
+-----
+
+* Fix the missing os in command in example
+* Add 'allowed address pairs' option to 'port create/set/unset'
+* change os in command example to openstack(3)
+* change os in command example to openstack(2)
+* change os in command example to openstack
+* Add support for clearing router gateway
+* Introduce overwrite functionality in ``osc router set``
+* Add one test for "backup set" command
+* Add doc for Searchlight client
+* Tivial:update the description format in volume_snapshot.py
+* Add filtering options to the address scope list command
+* Add support for setting router gateway
+* Add ploop to supported disk formats
+* SDK refactor: Prepare network commands
+* Updated from global requirements
+* [TrivialFix] Fix typo error
+
+3.5.0
+-----
+
+* SDK Refactor: Prepare port commands
+* 3.5.0 release note cleanup
+* Updated from global requirements
+* Add two consistency group commands
+* SDK Refactor: Prepare router commands
+* Add "--remote-source" option to "volume snapshot create" command
+* update plugins documentation
+* Add extra filtering options to floating ip list
+* Correct missspellings of secret
+* Add '--force' option to 'volume snapshot delete' command
+* Modified API calls in os usage
+* Trivial: update volume-qos.rst
+* Add "consistency-group-snapshot" option to consistency group create
+* Add "consistency group set" command
+* Add --default option to "volume type list"
+* Add some options to "volume create" command
+* Revert "Remove marker and loop from "image list" command"
+* Remove auth_with_unscoped_saml decorator
+* SDK Refactor: Prepare ip availability commands
+* Adjust the code sequence in consistency_group.py
+* Avoid duplicated project_id when show network resources
+* Add "dns-name" option to "os port create" and "os port set"
+* Add "consistency group show" command
+* Add "consistency group delete" command
+* Updated from global requirements
+* Updated from global requirements
+* Correct reraising of exception
+* Add '--project' and '--project-domain' options to os cmds
+* Add network service provider list to OSC
+* Add `--enable/disable-port-security` option to `port set` and `port create`
+* Add unit tests for server create in computev2
+* Trivial:modify one parameter
+* Refactor availability zone functional test
+* Add QoS support to Network object
+* Introduce overwrite functionality in ``osc subnet set``
+* Functional test for configuration
+* Functional test for aggregate
+* Refactor module functional test
+* Add choices for option '--policy'
+* Fix description errors in volume fakes
+* DevRef fix for network qos policy
+* Add options to "volume snapshot list" command
+* Show team and repo badges on README
+* Functional test for agent
+* Add "volume host set" command
+* Updated from global requirements
+* Functional test for server group
+* clean up image choices and help text
+* Add "--type" and "--retype-policy" options to "volume set" command
+* TrivialFix in helpMessage for readability
+* Updated from global requirements
+* Add "Is Public" column in volume type list
+* Remove outdated comments in volume unit test
+* Fill the missing colon
+* Add "volume host failover" command
+* Sort list images by name by default
+* SDK Refactor: Prepare security group rule commands
+* SDK Refactor: Prepare network rbac commands
+* SDK Refactor: Prepare network qos policy commands
+* SDK Refactor: Prepare subnet commands
+* Add commands for "consistency group snapshot"
+
+3.4.1
+-----
+
+* Add relnote for release 3.4.1
+* Use project_domain_id only in password auth
+* Using v2 as the default version of Glance
+* Add "consistency group create" command
+
+3.4.0
+-----
+
+* translate all command help strings
+* Updated from global requirements
+* 3.4.0 release note cleanup
+* Do proper deprecation for security group rule create
+* Outdated test data clean up in volume
+* TrivialFix: Insert blank space for readability
+* Updated from global requirements
+* Updated from global requirements
+* Add '--network' and other options to floating ip list
+* Show disk format vhdx in help
+* network.common.NetworkAndComputeShowOne: catch HttpException
+* Updated from global requirements
+* Add 'description' option
+* Add 'all-projects' option to 'volume backup list'
+* Add options to "volume backup list" command
+* Updated from global requirements
+* Not appropriate name sg rule attribute
+* SDK refactor: Prepare floating ip commands
+* Refactor "snapshot" commands
+* Updated from global requirements
+* Add filtering options --name,--enable,--disable to router list
+* Support --provider-* options in the network list command
+* Add --long option and more columns to the hypervisor list command
+* Adds information about private key generation for instance access
+* Updated coverage configuration file
+* Avoid duplicated project_id when show network
+* Updated from global requirements
+* update openstackclient page url
+* update volume and zone commands
+* Improve a network testcase
+* Use FakeImage class to replace duplicated image info in volume test
+* Updated from global requirements
+* Correct help string of the subnet pool list options
+* Allow input the QoS policy name in network rbac create command
+* Updated from global requirements
+* Add option to allow filtering by mac-address on port list
+* Updated from global requirements
+* Warning for empty password set for user create/set
+* Reset allocation pools to [] instead of ''
+* Rename variable to avoid shadowing of built-in name
+* Add "--read-only" and "--read-write" options in "volume set"
+* Add "volume migrate" command
+* Add description field port create & port set
+* Add support make a router HA
+* Add necessary info to Floating IP list
+* properly format error messages for volume resizing
+* Updated from global requirements
+* Update the doc for Zaqar v2
+* Updated from global requirements
+* Add direction and protocol options to os security group rule list cmd
+* Updated from global requirements
+* Add a new column and a new option the 'os port list' cmd
+* Add security groups options to "port create/set/unset"
+* Fix --shared/block-migration options in server migrate command
+* Add network support for Network QoS policies
+* Fix router unset --route option
+* Redefine set/unset command devref
+* Refactor image v1 unit tests with FakeImage class
+
 3.3.0
 -----
 
@@ -9,6 +334,9 @@ CHANGES
 * Enable release notes translation
 * Updated from global requirements
 * Mask passwords in debug logs for auth_config_hook
+* SDK Refactor: Prepare subnet pool commands
+* SDK Refactor: Prepare network segment commands
+* SDK Refactor: Prepare address scope commands
 * Updated from global requirements
 * Refactor qos spec unit test in volume v1
 * Add --ha option to os router create command
@@ -21,7 +349,9 @@ CHANGES
 * Add and modify options for "volume create" command
 * Implement "consistency group list" command
 * Updated from global requirements
+* fix doc information in the limit.rst
 * Replace 'MagicMock' with 'Mock'
+* Add translation markers for object commands
 * Add option "--name" to command "openstack object create"
 * Add default limit for container/object
 * Add command option parameter in console-url.rst
