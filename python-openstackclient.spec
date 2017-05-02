@@ -6,7 +6,7 @@
 #
 Name     : python-openstackclient
 Version  : 3.9.0
-Release  : 34
+Release  : 35
 URL      : http://tarballs.openstack.org/python-openstackclient/python-openstackclient-3.9.0.tar.gz
 Source0  : http://tarballs.openstack.org/python-openstackclient/python-openstackclient-3.9.0.tar.gz
 Source99 : http://tarballs.openstack.org/python-openstackclient/python-openstackclient-3.9.0.tar.gz.asc
