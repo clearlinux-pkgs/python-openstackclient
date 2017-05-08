@@ -1,6 +1,99 @@
 CHANGES
 =======
 
+3.11.0
+------
+
+* Do not always init compute\_client when doint port list
+* Skip floating ip attach functional test on nova-net
+* Updated from global requirements
+
+3.10.0
+------
+
+* Funcional tests: quota list
+* Nova-net functional tests: aggregates
+* Functional tests: Identity v2 and DevStack
+* Updated from global requirements
+* Fix volume qos spec list
+* Nova net functional tests round 3
+* Nova net functional tests round 2
+* Nova net functional tests round 1
+* Fix Nova-net netowrk commands
+* Fix quota functional tests for nova-net
+* Fix server create with nova-net
+* Updated from global requirements
+* Functional test for subnet\_pool
+* Fix NoneType error for volume snapshot create command
+* Improve no-auth path
+* Remove ipdb installation in tox debug section
+* Make test\_server.py more elegant and simple
+* Fix network list functional test
+* Explicitly set 'builders' option
+* Low-level Compute v2 API: floating ip pool
+* Low-level Compute v2 API: network
+* Split network tests
+* Updated from global requirements
+* Low-level Compute v2 API: floating ip
+* Low-level Compute v2 API: security group rules
+* Low-level Compute v2 API: security group
+* Add document about renaming OS\_ENDPOINT\_TYPE to OS\_INTERFACE
+* Split floating IP tests
+* Update to tox.ini
+* Add --network and --port to server create
+* Updated from global requirements
+* Split security group tests
+* Allow override of distributed router flag
+* Clean up password prompt work-arounds
+* "floating ip set/unset port" for OSC
+* Add "qos-policy" option to "port create" & "port set"
+* Structure FindFloatingIP() to work without ip\_cache
+* Enable to specify which fixed-ip to add to a vm
+* Correct flavor associate/disassociate commands in Mapping Guide
+* Help/docs cleanups: marker, limit, ip-address metavars
+* Release notes cleanup for 3.10.0 release
+* Enable to add/remove port to/from a server
+* Introduce neutron flavor associate, disassociate to OSC
+* Add help commands withouth auth in functional
+* Fix block-device-mapping when volume\_size is empty
+* Enable to create legacy router
+* Trivial Fix
+* Updated from global requirements
+* Use Sphinx 1.5 warning-is-error
+* doc: Correct Sphinx warnings
+* doc: Remove local fork of apidoc
+* Change noauth strategy for plugin loading
+* Fix volume transfers request commands
+* Doc: Fix link in network flavors
+* OSC Extension Show
+* Remove log translations
+* Fix Trivial Changes in [1]
+* Support to add/remove multi users for "group add/remove user"
+* Simplify logic around option lists in port set
+* Enable to specify which vm fixed-ip to publish
+* Introduce Neutron DHCP agent commands to OSC
+* docs: Don't include ChangeLog
+* OSC Network Flavor Profile
+* Make MAC address of port updatable
+* Non-Admin can't list own projects
+* Updated from global requirements
+* Narrow expected responses for CheckUserInGroup
+* Add extra filtering options to qos policy list
+* Adds missing flavor information in the server list long command
+* Functional test for ip\_availability
+* OSC Quota List
+* Fix reference in network flavor create command reference
+* Refactor ServerTests and ServerEventTests functional test classes
+* Fix "security group list" command to display project ID properly
+* Trivial Fix
+* Jsonify meter and meter rule functional tests
+* Fix handling the use\_default\_subnet\_pool attribute
+* Add sort support to project list
+* Add the bgp agent type to network agent command
+* Remove py34 tox env and pypi classifier
+* command list: Move network meter appropriately
+* Add server event list and show commands
+
 3.9.0
 -----
 
@@ -9,16 +102,18 @@ CHANGES
 * Trivial Fix
 * add neutron CLI to decoder
 * Normalize the gnocchiclient docs entry
+* Add "--private-key" option for "keypair create"
 * Trivial Fix
 * Updated from global requirements
 * Jsonify network flavor functional tests
 * Nit: Trivial doc formatting fix for network flavor
+* Add a validation about options for server migrate command
 * Updated from global requirements
 * Update doc/source/command-objects/image.rst
 * Port set/unset SecGroup Bug Fix
 * Fix output of ListSecurityGroupRule
 * openstack image create : --file and --volume exclude each other
-* Fix can not set is_default in network
+* Fix can not set is\_default in network
 * Support --no-property in "volume set" command
 * Revert unit tests for quota commands
 * Support list commands by group name keyword
@@ -41,7 +136,7 @@ CHANGES
 * Remove quota set workaround for SDK <0.9.13
 * Fix image selection in server function tests
 * Fix "server create" command failed when --nic auto or none
-* Use public and unified method get_console_url()
+* Use public and unified method get\_console\_url()
 * Handle log message interpolation by the logger in compute/
 * Handle log message interpolation by the logger in network/
 * Handle log message interpolation by the logger in identity/
@@ -57,7 +152,8 @@ CHANGES
 * Fix "module list --all" failed
 * NIT: replace os with openstack in command example
 * mention the final ocata osc version in releasenotes
-* TODO cleanup: OSC_Config
+* SDK refactor: Set "is\_admin\_state\_up" for network agent
+* TODO cleanup: OSC\_Config
 * Add mitaka release notes to master
 * Update reno for stable/ocata
 
@@ -74,13 +170,13 @@ CHANGES
 * Fix sphinx errors
 * Updated from global requirements
 * Cleanup for 3.8.0 release
-* Switch server create to block_device_mapping_v2
+* Switch server create to block\_device\_mapping\_v2
 * Support "--no-property" option in volume snapshot set
 * Adds domain specification for SetUser
 * Add options to "server list" command
-* Fix Identity functional tests to not require OS_AUTH_URL
-* change assert_show_fields to not fail on new fields
-* Add server_boot_from_volume() test
+* Fix Identity functional tests to not require OS\_AUTH\_URL
+* change assert\_show\_fields to not fail on new fields
+* Add server\_boot\_from\_volume() test
 * Fix 'mapping set' return value
 * Add server test for image and flavor lookups
 * Updated from global requirements
@@ -92,11 +188,12 @@ CHANGES
 * Update devref about "--no-property"
 * Fix OSC networking commands help errors
 * Functional tests debug support
+* Switch to use cleanup method in functional test
 * Fix functional test for creating subnet
 * Functional test for router
 * Functional test for subnet
 * Functional test for volume qos
-* Remove the fixed set of choices for network_type
+* Remove the fixed set of choices for network\_type
 * Add plugin adoption for trove
 * Error in the return of command server show, create
 * Error in the return of command 'volume qos create'
@@ -116,7 +213,7 @@ CHANGES
 * Fix quota show --default command
 * Fix network functional tests for sdk 0.9.12
 * Fix floating IP delete and show by IP
-* Add "encryption-*" options in volume type commands
+* Add "encryption-\*" options in volume type commands
 * Fix subnet creating failure in functional test
 * fix functional tests for network agents
 * Fix security group rule list for NEtwork v2
@@ -131,7 +228,7 @@ CHANGES
 * Updated from global requirements
 * Add support for Network QoS rule commands
 * Make 'object save' fast again
-* Fix Octavia gate breakage caused by _get_columns()
+* Fix Octavia gate breakage caused by \_get\_columns()
 * functional test for volume
 * Fix port command for SDK >0.9.10
 * Fix filter error in os volume list
@@ -147,10 +244,10 @@ CHANGES
 * Functional tests - port
 * Add support for Glance 'update image members' feature
 * Fixes image api URL endpoint for certain scenario
-* Remove unneeded methods from OS_Config class
+* Remove unneeded methods from OS\_Config class
 * Error handling for delete commands in identity
 * Update the description format
-* Add ":option:` `" in the help message
+* Add ":option:\` \`" in the help message
 * OSC Network Meter
 * Beef up floating IP functional tests
 * Beef up address scope functional tests
@@ -180,10 +277,10 @@ CHANGES
 * change os in command example to openstack(2)
 * change os in command example to openstack
 * Add support for clearing router gateway
-* Introduce overwrite functionality in ``osc router set``
+* Introduce overwrite functionality in \`\`osc router set\`\`
 * Add one test for "backup set" command
 * Add doc for Searchlight client
-* Tivial:update the description format in volume_snapshot.py
+* Tivial:update the description format in volume\_snapshot.py
 * Add filtering options to the address scope list command
 * Add support for setting router gateway
 * Add ploop to supported disk formats
@@ -211,10 +308,10 @@ CHANGES
 * Add --default option to "volume type list"
 * Add some options to "volume create" command
 * Revert "Remove marker and loop from "image list" command"
-* Remove auth_with_unscoped_saml decorator
+* Remove auth\_with\_unscoped\_saml decorator
 * SDK Refactor: Prepare ip availability commands
-* Adjust the code sequence in consistency_group.py
-* Avoid duplicated project_id when show network resources
+* Adjust the code sequence in consistency\_group.py
+* Avoid duplicated project\_id when show network resources
 * Add "dns-name" option to "os port create" and "os port set"
 * Add "consistency group show" command
 * Add "consistency group delete" command
@@ -223,12 +320,12 @@ CHANGES
 * Correct reraising of exception
 * Add '--project' and '--project-domain' options to os cmds
 * Add network service provider list to OSC
-* Add `--enable/disable-port-security` option to `port set` and `port create`
+* Add \`--enable/disable-port-security\` option to \`port set\` and \`port create\`
 * Add unit tests for server create in computev2
 * Trivial:modify one parameter
 * Refactor availability zone functional test
 * Add QoS support to Network object
-* Introduce overwrite functionality in ``osc subnet set``
+* Introduce overwrite functionality in \`\`osc subnet set\`\`
 * Functional test for configuration
 * Functional test for aggregate
 * Refactor module functional test
@@ -260,7 +357,7 @@ CHANGES
 -----
 
 * Add relnote for release 3.4.1
-* Use project_domain_id only in password auth
+* Use project\_domain\_id only in password auth
 * Using v2 as the default version of Glance
 * Add "consistency group create" command
 
@@ -288,11 +385,11 @@ CHANGES
 * Refactor "snapshot" commands
 * Updated from global requirements
 * Add filtering options --name,--enable,--disable to router list
-* Support --provider-* options in the network list command
+* Support --provider-\* options in the network list command
 * Add --long option and more columns to the hypervisor list command
 * Adds information about private key generation for instance access
 * Updated coverage configuration file
-* Avoid duplicated project_id when show network
+* Avoid duplicated project\_id when show network
 * Updated from global requirements
 * update openstackclient page url
 * update volume and zone commands
@@ -333,7 +430,7 @@ CHANGES
 * Improve output of supported API versions
 * Enable release notes translation
 * Updated from global requirements
-* Mask passwords in debug logs for auth_config_hook
+* Mask passwords in debug logs for auth\_config\_hook
 * SDK Refactor: Prepare subnet pool commands
 * SDK Refactor: Prepare network segment commands
 * SDK Refactor: Prepare address scope commands
@@ -341,7 +438,7 @@ CHANGES
 * Refactor qos spec unit test in volume v1
 * Add --ha option to os router create command
 * Updated from global requirements
-* Document `openstack complete` help and usage
+* Document \`openstack complete\` help and usage
 * Add example in the doc when using Identity v3
 * Updated from global requirements
 * Update default nova api version to 2.1
@@ -382,7 +479,7 @@ CHANGES
 * Refactor volume unit test with FakeVolume class in volume v1
 * replace metavar "volume-id" with "volume" to avoid ambiguity
 * Overwrite/Clear support for subnets
-* Introduce overwrite functionality in ``osc port set``
+* Introduce overwrite functionality in \`\`osc port set\`\`
 * Remove unnecessary setUp
 * Add 'description' option to os subnet (pool) create/set cmd
 * Add --description to Create/Set Network
@@ -393,7 +490,7 @@ CHANGES
 * Fix quota-update issue in LBaaS
 * Fix Quota Support for HMs
 * Correct login name deduction in SshServer
-* router list if availability_zone ext not enabled
+* router list if availability\_zone ext not enabled
 * Support mark volume as bootable in volume set
 * Doc, help and message updates for port unset
 * Replace 'MagicMock' with 'Mock'
@@ -401,7 +498,7 @@ CHANGES
 * Fix openstack quota set/show --class not work
 * Support fetching network project default quota
 * Add functional tests for unset multiple volume type props
-* Set quota "per_volume_gigabytes", "backup_gigabytes" and "backups"
+* Set quota "per\_volume\_gigabytes", "backup\_gigabytes" and "backups"
 * Unit tests of quota command refactor
 * Trivial: Rename ListTransferRequests to ListTransferRequest
 * Display hypervisor information without uptime
@@ -413,7 +510,7 @@ CHANGES
 * Add "--limit" and "--marker" options to "volume list" command
 * Support error handling for delete commands in volume v1
 * Multi REST API calls error handling of "volume unset" command
-* remove the old post_test_hook
+* remove the old post\_test\_hook
 * remove duplicate unit test
 * unwedge the gate
 * Add network segment create, delete and set support
@@ -421,7 +518,7 @@ CHANGES
 * move unit tests to new "unit" test module
 * Defer auth prompting until it is actually needed
 * standardize release note page ordering
-* Do not show "os-volume-type-access:is_public" property of volume type
+* Do not show "os-volume-type-access:is\_public" property of volume type
 * better functional test collection
 * format token expires time to prevent json loading datetime data
 * Update reno for stable/newton
@@ -481,7 +578,7 @@ CHANGES
 * Updated from global requirements
 * osc-lib: shell
 * Implement network agents functionality
-* Show "target_project_id" attribute properly for network rbac object
+* Show "target\_project\_id" attribute properly for network rbac object
 * Add unit tests for group commands in identity v3
 * Updated from global requirements
 * Updated from global requirements
@@ -491,7 +588,7 @@ CHANGES
 * Add a document for required options
 * Refactor identity v3 unit tests with fake class
 * Updated from global requirements
-* OS_DEFAULT_DOMAIN must be an ID
+* OS\_DEFAULT\_DOMAIN must be an ID
 * Updated from global requirements
 * Document network trunk  commands
 * Update the description of project in releasenotes
@@ -511,7 +608,7 @@ CHANGES
 * Rework clientmanager
 * Clarification of option name rules
 * Remove execute permission on a few files
-* Fix error for find_service() in identity
+* Fix error for find\_service() in identity
 * Standardize import format
 * Remove discover from test-requirements
 * Add Support for showing flavor access list
@@ -526,14 +623,14 @@ CHANGES
 * Updated from global requirements
 * Unskip the tests affected by warlock 1.3.0
 * Follow upper constraints for all tox targets
-* Add create_one_image_member() in FakeImage class and update test
+* Add create\_one\_image\_member() in FakeImage class and update test
 * Update doc for credential in indentityv3
 * Updated from global requirements
-* Allow format selection in get_opts
+* Allow format selection in get\_opts
 * Change to plural form of object in multi delete error message in networkv2
 * Support error handling for delete commands in volumev2
 * Make set/unset commands pass normally when nothing specified in identityv3
-* Temp work around for missing select_auth_plugin()
+* Temp work around for missing select\_auth\_plugin()
 * Add "--project" option to "volume type create" command
 * Change the wrong import order
 * Modify some help and error messages in ec2creds identityv2
@@ -549,7 +646,7 @@ CHANGES
 * Updated from global requirements
 * remove unused LOG
 * Updated from global requirements
-* Remove FakeService.get_services
+* Remove FakeService.get\_services
 * Add notes, modify notes in fakes docstring
 * Add network-topolopy support
 * Unskip tests caused by bug 1599333
@@ -562,7 +659,7 @@ CHANGES
 * Add "--property" option to "snapshot create" command in volumev2
 * fix some spelling mistakes in doc/
 * skip failing tests due to bug 1599333 is fixed
-* Deduplicate get_opts methods
+* Deduplicate get\_opts methods
 * Add python-neutronclient to OSC plugins
 * fix a few spelling mistakes
 * Remove useless dest of option in "snapshot create" command
@@ -594,7 +691,7 @@ CHANGES
 * Implement rbac list and show command
 * Add unit tests for "host list" and "host show" commands
 * Fix several flake8 code style issues in compute tests
-* Make code more compact for get_list_opts function
+* Make code more compact for get\_list\_opts function
 * Remove code forgotten in cb28fb55884a9be7cd70c37343181116cf000a42
 * Support multi-delete for commands in identity V2
 * Fix the problem of router delete
@@ -610,19 +707,19 @@ CHANGES
 * Fix token/endpoint auth plugin
 * Updated from global requirements
 * Add "--project" option to the "flavor create" command
-* Fix a missing i18n support in security_group_rule.py
+* Fix a missing i18n support in security\_group\_rule.py
 * Make set/unset commands in compute/image/common return normally when nothing specified
 * Improve masking of secrets in configuration show
 * Refactor setting defaults for some scope parameters
-* Refactor check_valid_auth_options function
+* Refactor check\_valid\_auth\_options function
 * Make the print info support i18n
 * Support bulk deletion for "flavor/aggregate delete"
 * Add "--device-owner" option to "port list"
-* use env vars to specify OS_IDENTITY_API_VERSION
+* use env vars to specify OS\_IDENTITY\_API\_VERSION
 * Support JSON data for port binding profile
 * support multi-delete for volume-type
 * Standardize logger usage
-* Use osc_lib in server_image.py
+* Use osc\_lib in server\_image.py
 * Error handling of "router delete" command
 * Do not prompt for scope options with default scoped tokens
 * Updated from global requirements
@@ -648,7 +745,7 @@ CHANGES
 * Fix foundation copyrights
 * Ensure endpoint type is used for network commands
 * Support compute service force down/up
-* Fix errors in ``set/unset flavor`` unit tests
+* Fix errors in \`\`set/unset flavor\`\` unit tests
 * Fix i18n problems for common files in identity
 * osc-lib: timing
 * osc-lib: command
@@ -680,7 +777,7 @@ CHANGES
 * Release note cleanups for 2.6.0
 * Fix i18n supports in commom
 * Add Tox prerequisites and installation
-* Update unit test test_extension with fake class
+* Update unit test test\_extension with fake class
 * Support error handling for "port delete" command
 * Fix i18n support problems in identity
 * Add functional tests for IP availability
@@ -715,7 +812,7 @@ CHANGES
 * Fix unit test for volume commands in volumev2
 * include old release notes in reno
 * add unit test for compute agent command
-* Add FakeQos class and update unit test for qos_specs in VolumeV2
+* Add FakeQos class and update unit test for qos\_specs in VolumeV2
 * Updated from global requirements
 * Fix i18n support in cinder
 * Add support for setting flavor-access
@@ -723,7 +820,7 @@ CHANGES
 * Add "image unset" command
 * Fix output and error log in server.py
 * Support deleting multi address scopes in networkv2
-* Fix functest "test_server_metadata()" in test_sever.py
+* Fix functest "test\_server\_metadata()" in test\_sever.py
 * Fix help message for "server group delete" command
 * Add network segment command object
 * [compute] Add server backup function
@@ -756,7 +853,7 @@ CHANGES
 * Add FakeBackup class and updata backup unittest in volumeV2
 * Add ip version filter to subnet list
 * Added CONTRIBUTING.rst file
-* Add VLAN Transparent option to ``osc network``
+* Add VLAN Transparent option to \`\`osc network\`\`
 * Fix i18n support for help and error msg in network
 * Refactor TestRemoveProjectImage with FakeImage class
 * Added --no-route to the router set command
@@ -776,7 +873,7 @@ CHANGES
 * Implement "address scope create" command
 * Add unit tests for "server show" command
 * Updated from global requirements
-* Use find_resource() instead of get() in _prep_server_detail()
+* Use find\_resource() instead of get() in \_prep\_server\_detail()
 * Ignore domain related config when using with keystone v2
 * Fix functional test failures
 * Map server power state num to meanful string
@@ -813,7 +910,7 @@ CHANGES
 * Add "server group list" command
 * Add "server group delete" command
 * Add "server group create" command
-* Support X.latest format for OS_COMPUTE_API_VERSION
+* Support X.latest format for OS\_COMPUTE\_API\_VERSION
 * Fix mutable default arguments in tests
 
 2.4.0
@@ -841,7 +938,7 @@ CHANGES
 * Trivial: Fix incorrect comment text
 * Enhance exception handling for "network delete" command
 * Append existing information during port set
-* Use CommandFailed exception from tempest_lib
+* Use CommandFailed exception from tempest\_lib
 * Updated from global requirements
 * Fix prefixes output for subnet pool list
 * Doc: Unify repeatable option comments
@@ -871,7 +968,7 @@ CHANGES
 * Add external network options to osc network create
 * Fix typos in docstrings and comments
 * Improve tmpfile cleanup in functests
-* Remove unused method cleanup_tmpfile
+* Remove unused method cleanup\_tmpfile
 * Use fixtures and addCleanup instead of tearDown
 * Log hint when --enable present with --disable-reason
 * Trivial: Rename FakehypervisorStats to FakeHypervisorStats
@@ -886,7 +983,7 @@ CHANGES
 * Add fixed keypair create functional test
 * Fix subnet pool prefix length option
 * Wrong param type in compute-service.rst
-* Remove unused method 'from_response'
+* Remove unused method 'from\_response'
 * Aggregate object should be "grouping of compute hosts"
 * Docs cleanup: volume command help
 * Docs cleanup: volume type
@@ -901,14 +998,14 @@ CHANGES
 * Refactor security group rule create to use SDK
 * Trivial: Fix typo in common/limits.py
 * Fix "server unset" document issue
-* Use assert_called_once_with() instead of assert_called_with()
+* Use assert\_called\_once\_with() instead of assert\_called\_with()
 * Add Subnet add/remove support to router
 * Remove superfluous variable assignment statements
 * Style fix for one line docstring according to flake8
 * Add "router remove port" to osc
 * Add "router add port" to osc
 * Updated from global requirements
-* Image API v2: make volume_type optional
+* Image API v2: make volume\_type optional
 * Improve error for token issue command without auth
 * Devref: Document OSC interfaces available to plugins
 * Fix keypair create --public-key
@@ -951,9 +1048,9 @@ CHANGES
 * [Identity] Check return value is None in identity v3 unit tests
 * Add port list command
 * Trivial: Remove useless return
-* Use _get_columns() to obtain columns in network.py
+* Use \_get\_columns() to obtain columns in network.py
 * Add release note for security group set refactor
-* Test take_action() instead of run() in unit tests
+* Test take\_action() instead of run() in unit tests
 * Updated from global requirements
 * Add 'port create' command
 * Add subnet functional tests
@@ -964,7 +1061,7 @@ CHANGES
 2.2.0
 -----
 
-* Fix test_aggregate functional test
+* Fix test\_aggregate functional test
 * [Volume] Check return value is None in volume unit tests
 * Fix incorrect unit test for router
 * Refactor security group set to use SDK
@@ -975,7 +1072,7 @@ CHANGES
 * Add test cases to test some commands with '--wait' and fix bug
 * Devref: Options with Choices
 * Clean up unnecessary import of urlparse module
-* Trivial: Update image_list v2 docs
+* Trivial: Update image\_list v2 docs
 * Fix regression in interactive client mode
 * Fix 'code-block' tag format issues
 * TrivialOrder: Rearrange Class Names
@@ -984,8 +1081,8 @@ CHANGES
 * Subnet: Add "subnet delete" command using SDK
 * fix: Exception message includes unnecessary class args
 * Refactor security group list to use SDK
-* take_action() method from command.Command shouldn't return
-* Trivial: Reorder unit tests in test_type.py
+* take\_action() method from command.Command shouldn't return
+* Trivial: Reorder unit tests in test\_type.py
 * Fix return value of "image set" command
 * [Compute] Check return value is None in compute unit tests
 * Router: Add --route and --clear-routes options to "router set" command
@@ -1008,26 +1105,26 @@ CHANGES
 * Fixed a bunch of spacing
 * Add "security group rule show" command
 * Fix wrong return value in TestDeleteFloatingIPNetwork
-* Use update_parser_common() in ShowNetwork
+* Use update\_parser\_common() in ShowNetwork
 * [compute] Support restore server
 * [compute] Add unit test for keypair
 * Use instanceof instead of type
 * Add "os subnet show" command using SDK
-* Initialize _keys in __init__() in FakeFlavorResource
+* Initialize \_keys in \_\_init\_\_() in FakeFlavorResource
 * Add unit tests for 'hypervisor stats' command
 * Clean redundant argument to dict.get
 * Add functional tests for "volume" commands v2
 * Add functional tests for "image" command v2
 * Updated from global requirements
 * Add unit test for "flavor show" command
-* Refactor: Set "project_id" for FakeXXX in a consistent style
+* Refactor: Set "project\_id" for FakeXXX in a consistent style
 * Fix Mutable default argument
 * gitignore .idea
-* Trivial: Rename subnet_pool.rst to subnet-pool.rst
+* Trivial: Rename subnet\_pool.rst to subnet-pool.rst
 * Replace string format arguments with function parameters
 * Support unscoped token request
 * Use assertIsNone() instead of assertEqual(None, xxx)
-* Don't use Mock.called_once_with that does not exist
+* Don't use Mock.called\_once\_with that does not exist
 * Floating IP: Fix "ip floating list" in neutron network
 * Subnet Pool: Add "subnet pool show" command
 * Subnet Pool: Add "subnet pool list" command
@@ -1047,8 +1144,8 @@ CHANGES
 * Updated from global requirements
 * Add quota functional tests
 * Add NetworkAndCompute Lister and ShowOne classes
-* Fix identity test_role functional tests
-* Trivial: Fix a typo in test_network.py
+* Fix identity test\_role functional tests
+* Trivial: Fix a typo in test\_network.py
 * Updated from global requirements
 * Refactor network AZ exception handling
 * Refactor security group rule delete to use SDK
@@ -1067,9 +1164,9 @@ CHANGES
 * Compute: Fix DisplayCommandBase comments for cliff ShowOne subclass tests
 * Compute: Fix DisplayCommandBase comments for cliff Lister subclass tests
 * Compute: Fix DisplayCommandBase comments for cliff Command subclass tests
-* Remove identity_client.projects definition in TestSecurityGroup
-* Define security_group_rules mock in FakeComputev2Client
-* Move security_groups mock definition to FakeComputev2Client
+* Remove identity\_client.projects definition in TestSecurityGroup
+* Define security\_group\_rules mock in FakeComputev2Client
+* Move security\_groups mock definition to FakeComputev2Client
 * Fix formatting in release 2.0.0 notes
 * Fix some release note formatting
 * Add recursive object delete for containers
@@ -1082,32 +1179,32 @@ CHANGES
 2.1.0
 -----
 
-* Use assert_not_called() in common tests
+* Use assert\_not\_called() in common tests
 * Minor typo in help text
 * Fix a spell typos
 * Add --marker option to "image list" command
 * Add limit option to "image list" command
 * Remove marker and loop from "image list" command
-* Trivial: Reorder test class in test_volume.py into alphabetical order
+* Trivial: Reorder test class in test\_volume.py into alphabetical order
 * Fix wrong type of volume attachments in FakeVolume
 * Refactor TestVolumeCreate to use FakeVolume
 * Refactor security group delete to use SDK
 * Add "os port show" command
 * Support listing network availability zones
-* Trivial: Fix wrong comment in test_image.py
-* Network: Abstract get_body() out to be a private helper
-* Drop log_method decorator
+* Trivial: Fix wrong comment in test\_image.py
+* Network: Abstract get\_body() out to be a private helper
+* Drop log\_method decorator
 * Updated from global requirements
 * Consume openstackclient.common.command in subnet/port
 * Fix showing network quotas for a project
 * Add missing release notes
-* log take_action parameters in a single place
+* log take\_action parameters in a single place
 * Revert "Skip identity v2 functional tests"
 * Skip identity v2 functional tests
 * Add availability zone support for router commands
 * Update translation setup
 * Add availability zone support for network commands
-* Allow wait_for_delete to work for all clients
+* Allow wait\_for\_delete to work for all clients
 * Updated from global requirements
 * Return names in list role assignments
 * Remove the Tuskar client
@@ -1121,7 +1218,7 @@ CHANGES
 * Updated from global requirements
 * Add python-searchlightclient to list of adopters
 * Refactor abstract columns and datalist out in compute test cases
-* log_method: get logger from decorated method if unspecified
+* log\_method: get logger from decorated method if unspecified
 * Set up logger of each command by metaclass
 * Refactor: Abstract columns and datalist out in volume test cases
 * Add support to delete the ports
@@ -1136,7 +1233,7 @@ CHANGES
 * Updated from global requirements
 * Support non-interactive user password update
 * Use assertTrue/False instead of assertEqual(T/F)
-* Replace assertEqual(*, None) with assertIsNone in tests
+* Replace assertEqual(\*, None) with assertIsNone in tests
 * Updated from global requirements
 * Further improve output for "os security group show"
 * Delete the unused LOG configure code
@@ -1144,21 +1241,21 @@ CHANGES
 * Implementation for project unset cmd for python-openstackclient
 * Enabling domain lookup for project set v3 command
 * Docstring should say 'default' if option is default
-* Trivial: Remove useless string_to_bool()
+* Trivial: Remove useless string\_to\_bool()
 * Refactor: Initialize parser in setUp() in TestNonNegativeAction
 * Refactor: Initialize parser in setUp() in TestKeyValueAction
-* Replace assertEqual(None, *) with assertIsNone(*)
+* Replace assertEqual(None, \*) with assertIsNone(\*)
 * Functional tests for security group rule
 * Improve output for "os security group show"
 * Add all regions to cloud configuration
 * Updated from global requirements
 * Add owner validation for "openstack image create/set"
-* TestServerGeneral: Add test for _prep_server_detail()
-* TestServerGeneral: Add test for _format_servers_list_networks()
+* TestServerGeneral: Add test for \_prep\_server\_detail()
+* TestServerGeneral: Add test for \_format\_servers\_list\_networks()
 * Trivial: Remove useless return from files in image and volume
 * Trivial: Remove useless return from files in network
 * Add support to list all security group rules
-* Replace assertEqual(None, *) with assertIsNone in tests
+* Replace assertEqual(None, \*) with assertIsNone in tests
 * Trivial: Remove useless return from files in compute
 * Add image re/deactivate commands
 * Router: Add "router show" command using SDK
@@ -1176,12 +1273,12 @@ CHANGES
 * Deprecated tox -downloadcache option removed
 * Router: Add "router list" command using SDK
 * Router: Add class FakeRouter to test "router xxx" command
-* Trivial: Improve unclear comments in test_server.py
+* Trivial: Improve unclear comments in test\_server.py
 * Make --image parameter optional in "server rebuild"
 * Trivial: Fix parameter name typo in network.rst
 * Trivial: Do not use plural format in command parameter in "network delete"
 * Map some of the SDK field names
-* TestServerGeneral: Add test for _format_servers_list_power_state()
+* TestServerGeneral: Add test for \_format\_servers\_list\_power\_state()
 * Remove python-neutronclient requirement
 * Fix poorly named test mocks
 * Remove old code after sdk integration
@@ -1189,16 +1286,16 @@ CHANGES
 * Add unit test for TestServerList to test --long option
 * Add multi deletion testcase for "openstack image delete"
 * Refactor TestImageDelete with FakeImage
-* Remove unuseful test data in test_netwrok.py
+* Remove unuseful test data in test\_netwrok.py
 * Migrate network client to SDK
 * Migrate "network show" command to use SDK
 * Migrate "network set" command to use SDK
 * Migrate "network delete" command to use SDK
 * Migrate "network create" command to use SDK
 * Fix "sevice show" cannot catch NoUniqueMatch Exception
-* The format_exc method does not take an exception
+* The format\_exc method does not take an exception
 * Migrate "network list" command to new version using SDK
-* Trivial: Coding style fix in test_flavor.py
+* Trivial: Coding style fix in test\_flavor.py
 * Use FakeVolume in server test cases
 * Use FakeImage in server test cases
 * Add source security group support to create rule
@@ -1206,7 +1303,7 @@ CHANGES
 * Introduce class FakeNetwork to fake one or more networks
 * Use formatter in server.py for "server list" tests
 * Updated from global requirements
-* Trivial: Import network.common as network_common in server.py
+* Trivial: Import network.common as network\_common in server.py
 * Refactor network test: Remove unusful test code
 * Refactor TestShowNetwork: Use TestNetwork in TestShowNetwork
 * Refactor TestSetNetwork: Use TestNetwork in TestSetNetwork
@@ -1231,7 +1328,7 @@ CHANGES
 * Add reno for release notes management
 * Add multi deletion testcase for openstack volume delete
 * Add class TestServerList to provide basic unit test for "server list" command
-* Enable setup_servers_mock() to take attributes param
+* Enable setup\_servers\_mock() to take attributes param
 * Introduce FakeImage class
 * Switch to ksa Session
 * Add release notes for 2.0.0
@@ -1258,7 +1355,7 @@ CHANGES
 * Use FakeFlavor in TestFlavorSet
 * Use FakeFlavor in TestFlavorList
 * Introduce class FakeFlavor to fake one or more flavors
-* Refactor: Move FakeFlavorResource to compute_fakes.py
+* Refactor: Move FakeFlavorResource to compute\_fakes.py
 * Refactor: Abstract datalist out in TestFlavorList to avoid redundant code
 * Refactor: Abstract columns out in TestFlavorList to avoid redundant code
 * Add "openstack server unshelve" into OSC
@@ -1273,15 +1370,15 @@ CHANGES
 * Add unit tests for "server unpause" command
 * Abstract a helper function for server.xxx() tests
 * Add multiple servers test case to TestServerDelete
-* Use setup_servers_mock() in the base class in TestServerDelete
-* Move setup_servers_mock() to class TestServer
+* Use setup\_servers\_mock() in the base class in TestServerDelete
+* Move setup\_servers\_mock() to class TestServer
 * Trivial: Fix typo in find() in network
 * Trivial: Fix a typo
 * Change 'Object Store' to 'Object Storage'
-* Use is_public to set access of volume type
+* Use is\_public to set access of volume type
 * Refactor: Order of security group class names
 * Move FakeServer to tests.common.v2.compute.fakes
-* Trivial: Add missing doc for parameter in wait_for_delete()
+* Trivial: Add missing doc for parameter in wait\_for\_delete()
 * Add functional tests for network crud
 * Remove py26 support
 * Doc: Update and add IP address
@@ -1289,7 +1386,7 @@ CHANGES
 * Enable "openstack server resume" command to take multiple servers
 * Enable "openstack server suspend" command to take multiple servers
 * Add "openstack server shelve" into OSC
-* Trivial: Fix wrong doc for wait_for_status()
+* Trivial: Fix wrong doc for wait\_for\_status()
 * Updated from global requirements
 * Remove the old fake server data
 * Use class FakeServer in TestServerResize
@@ -1297,9 +1394,9 @@ CHANGES
 * Use class FakeServer in TestServerDelete
 * Use class FakeServer in TestServerCreate
 * Add command wrapper doc
-* Trivial: Remove doc for non-existing param in format_dict()
+* Trivial: Remove doc for non-existing param in format\_dict()
 * Unable to set some compute quotas
-* Add --volume to Image `create`
+* Add --volume to Image \`create\`
 * Have configuration tests support OCC
 * Add unit tests for "server pause" command
 * Introduce random server faking mechanism
@@ -1319,18 +1416,18 @@ CHANGES
 * Add capability to update description of an IdP
 * validate non-ascii values for swift properties
 * Trivial: Fix wrong param name in comment
-* Split the vol_id from a dev mapping
+* Split the vol\_id from a dev mapping
 * better format remote IDs for identity providers
 * Trivial: Fix wrong param name in comment
 * Trivial cleanup: Use plural format for "server delete" doc
 * Set default network api to 2.0 instead of 2
 * Fix the bug of "openstack console log show"
 * Enable "openstack server pause" command to take multiple servers
-* Change method to get the user_id
-* Use fake server name instead of id when testing "server_name" param
+* Change method to get the user\_id
+* Use fake server name instead of id when testing "server\_name" param
 * Fix a bug about "openstack server list --user"
-* Add --owner to `image create`
-* Trivial: Fix wrong comment of _format_servers_list_networks()
+* Add --owner to \`image create\`
+* Trivial: Fix wrong comment of \_format\_servers\_list\_networks()
 * Add "server stop" command to osc
 * Add "server start" command to osc
 * Allow int version numbers in the clouds.yaml
@@ -1343,7 +1440,7 @@ CHANGES
 * Updated from global requirements
 * Trivial clean up: Add doc for "osc server lock/unlock"
 * Trivial clean up: do not use plural form in command arguments
-* Fix issue when displaying image_member
+* Fix issue when displaying image\_member
 * Add Command Options guideline doc
 * remove url from v3 regions
 * Support pagination params for flavor list
@@ -1374,7 +1471,7 @@ CHANGES
 * Fix non-ascii issue with object commands
 * Add ID column to compute service list
 * image set should not show the resource
-* Add tags to `image set`
+* Add tags to \`image set\`
 * Clean up Image v2 image set command
 * Evaluate --inherited in role list
 * Set object store arg order in docs
@@ -1387,32 +1484,32 @@ CHANGES
 * cleanup account ids from container commands
 * Add support for showing account details
 * Add support for updating swift account properties
-* Add tests for find_resource()
+* Add tests for find\_resource()
 * Imported Translations from Zanata
 * Mark arguments for 'credential' commands as required
 * attempt to find resource by listing
-* Additional exception handling for find_resource
+* Additional exception handling for find\_resource
 * Add shields.io version/downloads links/badges into README.rst
 * docs: pip install -e needs an argument
-* Glance `image set` Resolve Fracturing
+* Glance \`image set\` Resolve Fracturing
 
 1.7.0
 -----
 
 * Add release notes for 1.7.0
-* Use format_list instead of format_dict when listing images
+* Use format\_list instead of format\_dict when listing images
 * Format an images properties and tags
 * Add image create support for image v2
-* Change ignore-errors to ignore_errors
+* Change ignore-errors to ignore\_errors
 * Imported Translations from Zanata
 * Remove backticks from help in role commands
-* Move option logging back to start if initialize_app()
+* Move option logging back to start if initialize\_app()
 * Set default auth plugin back to 'password'
 * Updated from global requirements
 * Image fix bug with --volume
 * set image api to 1 for functional tests
 * Updated from global requirements
-* Use `discover_extensions` for novaclient
+* Use \`discover\_extensions\` for novaclient
 * Imported Translations from Transifex
 * Use novaclient.client.Client for initialization Nova client
 * Add filtering by user for 'openstack server list'
@@ -1420,12 +1517,12 @@ CHANGES
 * Support listing users by group name
 * Fix compute API version snafu
 * Properly handle port arguments for ICMP
-* Use a common decorator to log 'take_action' activation
+* Use a common decorator to log 'take\_action' activation
 * Fix 'auhentication' spelling error/mistake
 * Volume v2 list does not show server name
 * Ignore flavor and image find errors on server show
 * Create log configuration class
-* default OS_VOLUME_API_VERSION to v2
+* default OS\_VOLUME\_API\_VERSION to v2
 * Automate flavors, networks, and image get
 * unwedge the osc gate
 * additional functional tests for identity providers
@@ -1448,7 +1545,7 @@ CHANGES
 
 * Use correct domain to find project
 * Updated from global requirements
-* Skip functional test: test_server_up
+* Skip functional test: test\_server\_up
 * Updated from global requirements
 * Remove non-existing hacking deviations from doc
 * Update plugin documentation
@@ -1473,8 +1570,8 @@ CHANGES
 * New test for configuration show --mask
 * add new test for configuration show unmask
 * Minor Documentation changes for code samples
-* Set OS_VOLUME_API_VERSION before running functional tests
-* Added test for `volume type show`
+* Set OS\_VOLUME\_API\_VERSION before running functional tests
+* Added test for \`volume type show\`
 * Add functional tests for volume type list
 * New test for configuration show
 * Imported Translations from Transifex
@@ -1484,19 +1581,19 @@ CHANGES
 * Add configuration show command
 * Imported Translations from Transifex
 * Add plugin interface version
-* Fix --os-auth-plugin in auth_with_unscoped_saml
+* Fix --os-auth-plugin in auth\_with\_unscoped\_saml
 * add doc for floatingip
 * Updated from global requirements
 * Fix yet more documentation warnings
 * Make trustee/trustor/project searchable by ID
 * Add create and list for volume type v2
 * add image member commands for image API
-* Fix the way auth_type default value is overriden
+* Fix the way auth\_type default value is overriden
 * Format volume type properties when showing
-* Rename type.py to volume_type.py
+* Rename type.py to volume\_type.py
 * Removes trailing blank in trust show
 * Add volume type show for volume v1
-* --property should be required in `os unset` commands
+* --property should be required in \`os unset\` commands
 * More minor docs fixes
 * Minor identity documentation change
 * Add functional tests server reboot
@@ -1515,7 +1612,7 @@ CHANGES
 * add functional tests for identity v2
 * add --project-domain option for user v3
 * only return endpoints that have url
-* Fix the way we call find_resource when only using ID
+* Fix the way we call find\_resource when only using ID
 * Fix image save with API v2
 * Rename endpoint type to interface
 * Updated from global requirements
@@ -1539,9 +1636,9 @@ CHANGES
 * Updated from global requirements
 * Add support for volume API v2 QoS commands
 * Add tests for 'list' and 'show' for volume qos v1
-* Alphabetize tests for v1 qos_specs
+* Alphabetize tests for v1 qos\_specs
 * Add docs for QoS specs
-* No need for get_parser on QoS list
+* No need for get\_parser on QoS list
 * Alphabetize QoS specs
 * Add support for volume API v1 QoS commands
 * fix confused domain argument for network create v2
@@ -1568,13 +1665,13 @@ CHANGES
 -----
 
 * Improve the hint message
-* Fix the typo in `openstackclient/shell.py`
+* Fix the typo in \`openstackclient/shell.py\`
 * Add functional tests for volume set size
 * Add functional tests for server CRUD
 * Add functional tests for flavor metadata
 * Add flavor functional test
 * Add oidc plugin for listing federation projects
-* Skip trying to set project_domain_id if not using password
+* Skip trying to set project\_domain\_id if not using password
 * Updated from global requirements
 * Updated from global requirements
 * Add functional tests for security group CRUD
@@ -1595,7 +1692,7 @@ CHANGES
 * Imported Translations from Transifex
 * Add a reference to the IRC channels
 * Change Credentials header to Blob from data
-* Get rid of oslo_i18n deprecation notice
+* Get rid of oslo\_i18n deprecation notice
 * Fix security group list command
 * Rework shell tests
 * Add image functional tests
@@ -1655,7 +1752,7 @@ CHANGES
 * Functional tests run in many environments
 * Remove references to venv
 * Add a doc that dictates backwards incompatible changes
-* Remove run_tests.sh
+* Remove run\_tests.sh
 * Security group rule create fails
 * Fix security group create description bug
 * Adds support for container selection for backup
@@ -1689,7 +1786,7 @@ CHANGES
 * Use glanceclient's inbuilt images find
 * Updated from global requirements
 * Imported Translations from Transifex
-* Add support to remote_id
+* Add support to remote\_id
 * Add parent field to project creation
 * Add project and domain params to network create
 * Add a doc about authenticating against v3
@@ -1722,7 +1819,7 @@ CHANGES
 * Updated from global requirements
 * Revert "Skip functional tests until they are fixed"
 * Rename --verify for server resize to avoid conflict
-* Fix error msg in sort_items
+* Fix error msg in sort\_items
 * Skip functional tests until they are fixed
 * Restrict groups and users from changing domains
 * Do not allow user to change domain of a project
@@ -1730,16 +1827,16 @@ CHANGES
 * Imported Translations from Transifex
 * Change volume create --snapshot-id to --snapshot
 * Check volume status before extending size
-* Adding default user_domain_id parameter only when using password auth
+* Adding default user\_domain\_id parameter only when using password auth
 * Add sort support to image list
-* tenant_id to project_id in server show
+* tenant\_id to project\_id in server show
 * Added capabilities/options to 'openstack flavor list' command to match capabilities already provided by 'nova flavor-list':
 * Improving the help of the lock command
 * Updated from global requirements
 * Change test order to avoid incompatibliity
 * Add network support to quota show
 * Add filter to image list
-* Add the ability to extend volumes in `osc volume set`
+* Add the ability to extend volumes in \`osc volume set\`
 * fix the wrong order of assertEqual args
 * Add 'find by name' to --nic for creating server
 * Remove ignore portion of tox.ini
@@ -1796,7 +1893,7 @@ CHANGES
 * Command docs: group
 * Add endpoint v3 docs
 * Command docs: ec2 credentials
-* Rename column to `default project id` for long listing v3 user
+* Rename column to \`default project id\` for long listing v3 user
 * Add missing content for token commands
 * Add docs for usage show/list
 * Command docs: flavor
@@ -1807,7 +1904,7 @@ CHANGES
 * type should be required for v2.0 service create
 * Command object docs: container, object
 * Catch exception when getting quota
-* Rename `os project usage list` to `os usage list`
+* Rename \`os project usage list\` to \`os usage list\`
 * Add usage show command
 * Fix a few issues with 'usage list'
 * Compute calls ignore region selection
@@ -1844,7 +1941,7 @@ CHANGES
 * Add support for domains when deleting identity v3 resources
 * Command object docs: project, role, user
 * Updated from global requirements
-* Command object docs: aggregate, console *, keypair
+* Command object docs: aggregate, console \*, keypair
 * Begin copying wiki command list here
 * Enhance the theming for modules page
 * Fix volume create --image
@@ -1877,7 +1974,7 @@ CHANGES
 * Clean up shell authentication
 * Fix token issue after auth changeup
 * only generate one clientmanager instance in interactive mode
-* Remove ClientManager._service_catalog
+* Remove ClientManager.\_service\_catalog
 * Remove now-unnecessary client creation hacks
 * use jsonutils in oslo.serialization instead of keystoneclient
 * Close files on server create, add tests
@@ -1912,12 +2009,12 @@ CHANGES
 * Add low-level API base class
 * Test top-to-bottom: object-store containers
 * Updated from global requirements
-* utils.find_resource does not catch right exception
+* utils.find\_resource does not catch right exception
 * Remove unused reference to keyring
 * v3 credential set always needs --user option
 * Use oslo.utils
 * Change help text for image save command
-* Fixing typo and improving docstring of find_domain
+* Fixing typo and improving docstring of find\_domain
 * Updated from global requirements
 * Acknowlege git.o.o as OpenStack's git server
 * Add service catalog commands
@@ -1935,7 +2032,7 @@ CHANGES
 * Use Keystone client session.Session
 * Add action 'user password set' for identiy v3
 * Unordered dicts and lists causes variable results
-* Leverage openstack.common.importutils for import_class
+* Leverage openstack.common.importutils for import\_class
 * Multiple args for object and container commands
 * Sync with oslo-incubator and add importutils
 * assertEquals order wrong
@@ -1943,7 +2040,7 @@ CHANGES
 * Make Identity client load like the others
 * Fix server add security group
 * Fix security group list for non-admin
-* Change app.restapi to app.client_manager.session
+* Change app.restapi to app.client\_manager.session
 * Add i18n module to openstackclient
 * Create message variables for exceptions
 * Add oslo.i18n as a dependency
@@ -1952,9 +2049,9 @@ CHANGES
 * add service/interface/region filter for endpoint v3
 * add tests for identity v3 endpoint
 * add tests for identity v3 domain
-* a mistake in tests/identity/v3/test_role.py
+* a mistake in tests/identity/v3/test\_role.py
 * Add commands for object upload and delete
-* test_find_resource fails if run alone
+* test\_find\_resource fails if run alone
 * Use oslosphinx to generate documentation
 * user create v2.0 depends on tenantId in response
 * Updated from global requirements
@@ -1963,30 +2060,30 @@ CHANGES
 * Cleanup README.rst
 * fix typo in identity/v3/endpoint.py
 * Add network extension list
-* More make_client() logging cleanup
+* More make\_client() logging cleanup
 * Change V2 image tests to actually run V2 image code
 * Add more columns to image list output
 * Normalize more help strings
 * Fix PEP8 E302 errors
 * Fix IDP commands
 * Update help text for some network commands
-* Change object API_NAME to 'object_store'
+* Change object API\_NAME to 'object\_store'
 * Add Python 3 support
 * Fix server resize
 * Add basic timing support
-* Clean up make_client() logging
+* Clean up make\_client() logging
 * Domain administrator cannot do project operations
 * Replaced some UTF-8 characters with ASCII characters
 * Python 3: do not compare a list to a zip object
 * Allow network find to use alternate name
-* Move network stuff to v2 instead of v2_0
+* Move network stuff to v2 instead of v2\_0
 * Catch SystemExit for parse args
 * Add support to list volume extensions
-* Python 3: remove a useless code to safe_encode()
+* Python 3: remove a useless code to safe\_encode()
 * Add support to list compute extensions
 * Remove keyring support from openstackclient
 * trust authentication
-* Python 3: do not use __builtin__
+* Python 3: do not use \_\_builtin\_\_
 * Updated from global requirements
 * Remove backslash usage from a few tests
 * Sort/clean setup.cfg
@@ -2008,7 +2105,7 @@ CHANGES
 * Change the token verb to issue/revoke
 * Update docs template
 * Add a docs job to tox.ini
-* Fix find_resource for keystone and cinder
+* Fix find\_resource for keystone and cinder
 * Image create and set command updates and tests
 * Refactor oauth1 code for updates
 * Updated from global requirements
@@ -2024,13 +2121,13 @@ CHANGES
 * Change volume create --volume-type to --type
 * Fix server image create
 * Display all server log when --lines option is None
-* Fix help message for `ip floating delete`
+* Fix help message for \`ip floating delete\`
 * volume type create should display properties
 * Skip auth in cinderclient
 * Updated from global requirements
 * Implement CRUD operations for Identity Providers
 * Updated from global requirements
-* move read_blob_file_contents to utils
+* move read\_blob\_file\_contents to utils
 * Pass arguments to v3 keystoneclient by kwarg
 * Fix the project option to user list so it filters
 * Make endpoint commands more consistent
@@ -2080,7 +2177,7 @@ CHANGES
 * Fix image set properties error
 * Displaying curl commands for nova and cinder calls
 * Closes-Bug: #1262322 Make links clickable
-* Closes-Bug: #1262321 Remove the unimplemented post_process method call
+* Closes-Bug: #1262321 Remove the unimplemented post\_process method call
 
 0.3.0
 -----
@@ -2143,7 +2240,7 @@ CHANGES
 -----
 
 * Change version reporting to use pbr
-* Modify run_tests.sh to just run tox
+* Modify run\_tests.sh to just run tox
 
 0.2.rc1
 -------
@@ -2178,7 +2275,7 @@ CHANGES
 * Add show limits command
 * Remove api = apiName calls from each method
 * Add authenticate method to oauth code
-* Sync install_venv_common from oslo
+* Sync install\_venv\_common from oslo
 * Update documentation with info about setup.cfg
 * Add EC2 credentials CRUD
 * Finish up v3 role commands
@@ -2200,7 +2297,7 @@ CHANGES
 * Rename all instances of 'metadata' to 'property'
 * Switch to noun-verb command forms
 * Add console commands
-* Adds image `create` and `delete` functionality
+* Adds image \`create\` and \`delete\` functionality
 * Add fixed-ip and floating-ip commands
 * Add compute keypair commands
 * metadata is one word
@@ -2238,15 +2335,15 @@ CHANGES
 * Sync latest openstack-common
 * Upgraded to PEP8 1.3.3 to stay aligned with Nova, etc
 * Copy cfg and iniparser from oslo-incubator
-* Clean up test_shell so that the tests are captured though the test framework
-* Remove old/unsupported options from run_tests help message
-* Use install_venv_common.py from oslo
+* Clean up test\_shell so that the tests are captured though the test framework
+* Remove old/unsupported options from run\_tests help message
+* Use install\_venv\_common.py from oslo
 * Updated README to reflect latest changes
 * Ensure that image and identity clients are constructed properly
 * First pass at adding compute unit tests
 * v3 identity - group and project api
-* Fix test runner run_tests.sh is broken
-* Use the cliff framework's ShowOne as intended for `show image`
+* Fix test runner run\_tests.sh is broken
+* Use the cliff framework's ShowOne as intended for \`show image\`
 * Sync latest openstack-common updates
 * Standardize on a copyright header and ensure all files have them
 * Remove incorrect 'raise'
@@ -2269,7 +2366,7 @@ CHANGES
 * Secure password prompt (docs)
 * Use PyPI for client libs
 * If no password in env or command line, try prompting
-* Add read_versioninfo method
+* Add read\_versioninfo method
 * Fixed a typo in the rst docs
 * Add post-tag versioning
 * Update Contributing blurb in the docs
@@ -2278,7 +2375,7 @@ CHANGES
 * Fix pep8 issues
 * Move docs to doc
 * minor fixes
-* removing print call in roles get_data
+* removing print call in roles get\_data
 * Documented python setup.py develop
 * Fix 'set user' command
 * Add role CRUD commands
@@ -2294,7 +2391,7 @@ CHANGES
 * correcting ordering of imports
 * fix authentication setup in interactive mode and improve error handling so tracebacks are not printed twice
 * Revise command boolean flags
-* Move get_client_class() to common.utils
+* Move get\_client\_class() to common.utils
 * Add tenant CRUD commands
 * Add API versioning support
 * look at the command the user is going to run before trying to authenticate them
