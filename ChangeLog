@@ -1,6 +1,229 @@
 CHANGES
 =======
 
+3.14.2
+------
+
+* Re-implement novaclient bits removed in 10.0
+* Clean up W503 and E402 pep8 errors
+
+3.14.1
+------
+
+* neutron: add --mtu for create/set network
+* Rename python-openstacksdk to openstacksdk
+* Handle SDK changes
+* Updated from global requirements
+* Updated from global requirements
+* Update UPPER\_CONSTRAINTS\_FILE for stable/queens
+* Update .gitreview for stable/queens
+
+3.14.0
+------
+
+* Updated from global requirements
+* Fix use of new openstacksdk connection
+* Rework Network client config for new SDK Connection
+* Replace assert with condition
+* Updated from global requirements
+* Corrected spelling mistake
+* Updated from global requirements
+* Fix indentation in authentication.rst
+* Partially Revert "Update new documentation PTI jobs"
+* Use Zuul v3 fetch-subunit-output
+* Updated from global requirements
+* Updated from global requirements
+* Add floating IP qos\_policy actions
+* Updated from global requirements
+* Check that Glance returns image data before processing it
+* Allow ports filtering with device\_id
+* Update new documentation PTI jobs
+* flavor: clarify --swap description
+* Switch to use stestr directly
+* Fix func tests: Ensure to pass OS\_CLOUD envvar
+* Updated from global requirements
+
+3.13.0
+------
+
+* Send 'changes-since' instead of 'changes\_since' query parameter
+* Fix SDK Connection creation alternative to Profile
+* Remove -U from pip install
+* openstack subnet create fails when tags is None
+* Avoid tox\_install.sh for constraints support
+* Make py27 and py35 versions and template of unit-tips jobs
+* Add cliff and keystoneauth to tips jobs
+* Remove a bunch of things we promised to remove in 2H 2017
+* Release note cleanup
+* Set correct designate endpoint in docs
+* Make osc-tox-unit-tips work on other repos
+* Allow port list to shown undefined attributes
+* Updated from global requirements
+* Fix file mode on network-topology.rst
+* Add support for endpoing filter commands
+* Remove hard-coded policy choices for creating a server group
+* Fix credentials in create, update and list
+* Remove setting of version/release from releasenotes
+* Prepare for os-clinet-config to go away
+* Add logic to handle old and new sdk constructor
+* Updated from global requirements
+* Network: Add interfaces info in router show
+* Updated from global requirements
+* Show detailed message of neutron exception
+* Add RemoveNetwork command to server
+* Replace %r with %s on printing string variable
+* Updated from global requirements
+* Neutron agent delete: remove the wrong argument
+* Display Network QoS rule type details
+* Network: Add supports rbac target-all-projects
+* Updated from global requirements
+* Rehome test units lib
+* Zuul: add file extension to playbook path
+* Add python-rsdclient into plugin list
+* Add server rescue unit tests
+* Zuul job updates
+* Add missing parameters on openstack server rescue
+* Added AddNetwork command to server
+* Convert 'server' commands to use autoprogram
+* Native DevStack jobs
+* Add wrapper around ostestr
+* Accept 0 for --min-disk and --min-ram
+* Move more jobs in-repo
+* Attempt to de-race qos policy
+* Allow creating security rules without protocol
+* Move base functional test job in-repo
+* Switch to $USER in post\_test\_hooks
+* Avoid default mutable values in arguments
+* Be robust on import plugin module
+* auto-generate docs for v3 identity resources
+* Updated from global requirements
+* Support creating unaddress neutron port
+* Optimize getting endpoint list
+* Support icmp-type and icmp-code to be set as zero
+* Fix 'project purge' deletes ALL images problem
+* Update the documentation link for doc migration
+* Updated from global requirements
+* Add "volume service list --host" functional test case
+* Add functional test cases for "volume qos associate/disassociate"
+* Unroll the network qos policy functional tests
+* Add python-zunclient plugin
+* Attempt to work around chronically failing server issues with aggregates and qos
+* Fix subunit collection in functional tests with ostestr>=1.0.0
+* Updates for stestr
+* Updated from global requirements
+* Updated from global requirements
+* Correct import of keystoneauth1 session
+* Skip Volume v1 functional tests if v1 not present
+* Fix output for subnet show
+* Useless line of code in shell.py
+* Updated from global requirements
+* Updated from global requirements
+* Update image cli doc and fix some typos
+* Updated from global requirements
+* Convert remaining network functional tests to JSON
+* Convert network qos functional tests to JSON
+* Convert network security group functional tests to JSON
+* Fix "openstack image unset" command's help message typo
+* flake8-import-order: Ensure to place project imports last
+* Implied Roles
+* Updated from global requirements
+* auto-generate object docs
+* Revert "Disable karborclient until a fixed version is released"
+* Use flake8-import-order plugin
+* Allow PD as Subnetpool during Subnet creations
+* Imported Translations from Zanata
+* Convert network segment functional tests to JSON
+* Update release/stable branch table in docs
+* Update reno for stable/pike
+* Add .htaccess for docs migration
+* Add new commands for karbor osc plugin
+* Updated from global requirements
+* Replace guildelines with guidelines
+* Updated from global requirements
+* Updated from global requirements
+* Updated from global requirements
+* network functest: Remove condition for segment test
+* Use instance variables for subnet tests
+* Skip object-store functional tests when Swift is not available
+
+3.12.0
+------
+
+* Add optional parameter "user\_id" and "type" to list credentials
+* network tag UT: avoid using mix-in test class
+* wrong values in openstack quota show command
+* Update the documentation link for doc migration
+* Network tag support
+* Updated from global requirements
+* Release note cleanup for 3.12.0
+* Updated from global requirements
+* Updated from global requirements
+* Add domain parameter to Identity Provider
+* Start using 'cliff.sphinxext'
+* Updated from global requirements
+* Clean up the changes of os.environ in functional tests
+* Minor followup to network agent docs
+* Fix dynamic names in network functional tests
+* Disable karborclient until a fixed version is released
+* Add support for virtio-forwarder VNIC type
+* Fix 'domain' filter not work well in some commands
+* Fix column names for server list --no-name-lookup
+* Updated from global requirements
+* image-list should support filters 'name','status'
+* Add 'data\_plane\_status' option to Port classes
+* Fix unit test failures related to new os-client-config and osc-lib
+* Network L3 Router Commands for OSC
+* Add server list -n and --no-name-lookup arguments
+* Use openstackdocstheme in release note
+* Add the other commands for karbor osc plugin
+* Allow objects to be streamed to stdout
+* Add new parameter "is\_default" to Network QoS policy
+* Fix man page build
+* Add missing barbican commands
+* Added 'openstack image set --visibility'
+* Add python-octaviaclient plugin
+* Remove inaccurate mapping of 'host-meta' in csv
+* Updated from global requirements
+* Updated from global requirements
+* switch to openstackdocstheme
+* Use identity auth v3 the README examples
+* Updated from global requirements
+* update the docs URLs in the readme
+* move auto-generated api docs into contributor tree
+* reorganize existing documentation according to the new standard layout
+* Enable some off-by-default checks
+* Now OSC server create check keys in --nic
+* When creating a trust, send role\_ids instead or role\_names
+* Add direction field to QoS bandwidth limit
+* Show neutron tags in OSC network show
+* Add support for Karbor Plugin
+* Add project purge command to osc
+* Don't show hint about vlan transparent in network set
+* Add default-quota to subnet pool commands
+* Updated from global requirements
+* Fix Mapping Guide Error
+* Updated from global requirements
+* volume functest: ensure snapshots deleted when volume delete
+* Updated from global requirements
+* Updated from global requirements
+* Updated from global requirements
+* Updated from global requirements
+* Trivial fix typos
+* Replace "Display Name" by "Name" in volume list
+* JSON-ify image functional tests
+* Use \_get\_token\_resource in role assignment list
+* Updated from global requirements
+* Create server with security group ID and name
+* Refactor Extension show and list command
+* Updated from global requirements
+* Convert image functional tests into JSON format
+* Convert volume functional tests into JSON format
+* Make block-device-mapping more stable and clear
+* Correct the "extra spec" command openstack
+* Updated from global requirements
+* Ignore more exceptions in quota list
+* Rework floating ip functional tests
+
 3.11.0
 ------
 
@@ -87,6 +310,7 @@ CHANGES
 * Fix "security group list" command to display project ID properly
 * Trivial Fix
 * Jsonify meter and meter rule functional tests
+* Revert "Fix port command for SDK >0.9.10"
 * Fix handling the use\_default\_subnet\_pool attribute
 * Add sort support to project list
 * Add the bgp agent type to network agent command
@@ -107,6 +331,7 @@ CHANGES
 * Updated from global requirements
 * Jsonify network flavor functional tests
 * Nit: Trivial doc formatting fix for network flavor
+* Use \*\_as\_ids instead \*\_as\_list
 * Add a validation about options for server migrate command
 * Updated from global requirements
 * Update doc/source/command-objects/image.rst
@@ -225,6 +450,7 @@ CHANGES
 * Fix Network QoS rule CLI attrs parsing
 * Add unit test for multi volume types delete
 * add support for running tests with master dependencies
+* To display image size in human friendly format
 * Updated from global requirements
 * Add support for Network QoS rule commands
 * Make 'object save' fast again
@@ -319,6 +545,7 @@ CHANGES
 * Updated from global requirements
 * Correct reraising of exception
 * Add '--project' and '--project-domain' options to os cmds
+* Add functional test for volume service
 * Add network service provider list to OSC
 * Add \`--enable/disable-port-security\` option to \`port set\` and \`port create\`
 * Add unit tests for server create in computev2
