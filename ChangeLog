@@ -1,22 +1,90 @@
 CHANGES
 =======
 
-3.14.2
+3.16.0
 ------
 
-* Re-implement novaclient bits removed in 10.0
+* Release note cleanup for 3.16.0 release
+* Support --community in openstack image list
+* Don't sent disk\_over\_commit if nova api > 2.24
+* Fix error with image show when image name is None
+* Add command to show all service versions
+* Implement support for project limits
+* Implement support for registered limits
+* Pass volume snapshot size to volume create
+* compute: host: expand kwargs in host\_set() call
+* Fix lower-constraints.txt
+* Replace pbr autodoc with sphinxcontrib-apidoc
+* Skip calls to glance and nova when got no servers
+* Slow down and retry aggregate create/delete to lessen race
+* Retry floating IP tests
+* Support filtering port with IP address substring
+* Fix docs from I0dc80bee3ba6ff4ec8cc3fc113b6de7807e0bf2a
+* Add ability to filter image list by tag
+* Add release note link in README
+* Change bug url to a correct one
+* Adding api\_version to FakeApp
+* Fix the \`role implies list\` command
+* Fix volume type functional tests
+* Compute: Add description support for flavor
+* compute: limit the service's force down command above 2.10
+* Fix subnet host\_routes error
+* Do not require port argument when updating floating IP
+* Network: Add tag support for security group
+* Fix server show for microversion 2.47
+* Optimize \_prep\_server\_detail to avoid redundant find\_resource
+* Use Server.to\_dict() rather than Server.\_info
+* Update role document to include system parameter
+* Fix urls in README.rst
+* Allow setting network-segment on subnet update
+* Add system role functionality
+* Fix lower-constraints.txt
+* Make max\_burst\_kbps option as optional for bw limit QoS rule
+* Add cliff project link
+* Update command test for volume.v3
+* Prevent "server migrate --wait" from hanging
+* Format port\_details field of Floating IP
+* Trivial: Update pypi url to new url
+* Fix functional job failed
+* Network: Add tag support for floating ip
 * Clean up W503 and E402 pep8 errors
+* Add bgp commands to neutron decoder
+* Add help for nova interface-list to decoder
+* Remove deprecated ip floating commands
+* Fix limits show command without Nova and Cinder
 
-3.14.1
+3.15.0
 ------
 
-* neutron: add --mtu for create/set network
+* Updated from global requirements
+* Add --image-property parameter in 'server create'
+* add lower-constraints job
 * Rename python-openstacksdk to openstacksdk
-* Handle SDK changes
+* Add support to list image members
+* Display private flavors in server list
+* Fix additional output encoding issues
+* Correct application credential usage doc
+* Fix crashing "console log show"
+* Fix typo in 'floating ip associate' command and doc
+* neutron: add --mtu for create/set network
+* Make Profile fallback go bye-bye
+* Remove duplicated network attributes
+* Re-implement novaclient bits removed in 10.0
 * Updated from global requirements
+* Update links in README
+* Imported Translations from Zanata
+* Cleanup error messages on failure
+* Update help text for encryption provider
+* Add support for endpoint group commands
+* Add support for "--dns-domain" argument
+* Add project tags functionality
+* Make osc-functional-devstack-tips actually use tips
+* Zuul: Remove project name
+* Add CRUD support for application credentials
+* Use find\_ip from openstacksdk
 * Updated from global requirements
-* Update UPPER\_CONSTRAINTS\_FILE for stable/queens
-* Update .gitreview for stable/queens
+* Fix tox -e venv -- reno new <slug>
+* Update reno for stable/queens
 
 3.14.0
 ------
@@ -48,6 +116,7 @@ CHANGES
 
 * Send 'changes-since' instead of 'changes\_since' query parameter
 * Fix SDK Connection creation alternative to Profile
+* Make functional-tips job voting
 * Remove -U from pip install
 * openstack subnet create fails when tags is None
 * Avoid tox\_install.sh for constraints support
