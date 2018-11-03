@@ -6,17 +6,17 @@
 #
 Name     : python-openstackclient
 Version  : 3.16.1
-Release  : 39
+Release  : 40
 URL      : http://tarballs.openstack.org/python-openstackclient/python-openstackclient-3.16.1.tar.gz
 Source0  : http://tarballs.openstack.org/python-openstackclient/python-openstackclient-3.16.1.tar.gz
 Source99 : http://tarballs.openstack.org/python-openstackclient/python-openstackclient-3.16.1.tar.gz.asc
 Summary  : OpenStack Command-line Client
 Group    : Development/Tools
 License  : Apache-2.0
-Requires: python-openstackclient-bin
-Requires: python-openstackclient-python3
-Requires: python-openstackclient-license
-Requires: python-openstackclient-python
+Requires: python-openstackclient-bin = %{version}-%{release}
+Requires: python-openstackclient-license = %{version}-%{release}
+Requires: python-openstackclient-python = %{version}-%{release}
+Requires: python-openstackclient-python3 = %{version}-%{release}
 Requires: Babel
 Requires: Sphinx
 Requires: cliff
@@ -44,7 +44,7 @@ Team and repository tags
 %package bin
 Summary: bin components for the python-openstackclient package.
 Group: Binaries
-Requires: python-openstackclient-license
+Requires: python-openstackclient-license = %{version}-%{release}
 
 %description bin
 bin components for the python-openstackclient package.
@@ -61,7 +61,7 @@ license components for the python-openstackclient package.
 %package python
 Summary: python components for the python-openstackclient package.
 Group: Default
-Requires: python-openstackclient-python3
+Requires: python-openstackclient-python3 = %{version}-%{release}
 
 %description python
 python components for the python-openstackclient package.
@@ -84,14 +84,14 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1536217404
-python3 setup.py build -b py3
+export SOURCE_DATE_EPOCH=1541272835
+python3 setup.py build
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/python-openstackclient
-cp LICENSE %{buildroot}/usr/share/doc/python-openstackclient/LICENSE
-python3 -tt setup.py build -b py3 install --root=%{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/python-openstackclient
+cp LICENSE %{buildroot}/usr/share/package-licenses/python-openstackclient/LICENSE
+python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
@@ -104,8 +104,8 @@ echo ----[ mark ]----
 /usr/bin/openstack
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/python-openstackclient/LICENSE
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/python-openstackclient/LICENSE
 
 %files python
 %defattr(-,root,root,-)
