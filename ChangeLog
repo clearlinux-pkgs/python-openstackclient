@@ -1,13 +1,35 @@
 CHANGES
 =======
 
-3.16.1
+3.17.0
 ------
 
-* Fix broken gate jobs
+* Add project param in LimitList parser
+* Handle not having cinderclient.v1 available
+* Add volume backend pool list command
+* Add volume backend capability show command
+* Allow endpoint filtering on both project and project-domain
+* Add --property option to 'server rebuild' command
+* Remove python-ceilometerclient
+* Add monascaclient to \`not plugins\` list
+* Fix some spaces in help messages
+* fix tox python3 overrides
+* Fix help message for subnetpool default-quota value
+* Fix 'project purge' deleting wrong project's servers and volumes
+* Add metavar for name parameter in subnet create
+* osc-included image signing (using openstacksdk)
+* Use templates for cover and lower-constraints
+* add lib-forward-testing-python3 test job
+* add python 3.6 unit test job
+* switch documentation job to new PTI
 * import zuul job settings from project-config
-* Update UPPER\_CONSTRAINTS\_FILE for stable/rocky
-* Update .gitreview for stable/rocky
+* Deprecate volume create --project and --user options
+* Fix inconsistency (nit)
+* Detailed help message for QoS max-burst-kbps value
+* Fix broken gate jobs
+* Add DNS support to floating IP commands
+* Fix missing trailing spaces in network help messages
+* Update reno for stable/rocky
 
 3.16.0
 ------
@@ -52,6 +74,7 @@ CHANGES
 * Update command test for volume.v3
 * Prevent "server migrate --wait" from hanging
 * Format port\_details field of Floating IP
+* Add dns-domain support to Network object
 * Trivial: Update pypi url to new url
 * Fix functional job failed
 * Network: Add tag support for floating ip
