@@ -6,7 +6,7 @@
 #
 Name     : python-openstackclient
 Version  : 3.17.0
-Release  : 42
+Release  : 43
 URL      : http://tarballs.openstack.org/python-openstackclient/python-openstackclient-3.17.0.tar.gz
 Source0  : http://tarballs.openstack.org/python-openstackclient/python-openstackclient-3.17.0.tar.gz
 Source99 : http://tarballs.openstack.org/python-openstackclient/python-openstackclient-3.17.0.tar.gz.asc
@@ -18,10 +18,8 @@ Requires: python-openstackclient-license = %{version}-%{release}
 Requires: python-openstackclient-python = %{version}-%{release}
 Requires: python-openstackclient-python3 = %{version}-%{release}
 Requires: Babel
-Requires: Sphinx
 Requires: cliff
 Requires: keystoneauth1
-Requires: openstackdocstheme
 Requires: openstacksdk
 Requires: osc-lib
 Requires: oslo.i18n
@@ -31,15 +29,16 @@ Requires: python-cinderclient
 Requires: python-glanceclient
 Requires: python-keystoneclient
 Requires: python-novaclient
-Requires: reno
 Requires: six
-Requires: sphinxcontrib-apidoc
 BuildRequires : buildreq-distutils3
 BuildRequires : pbr
 
 %description
+========================
 Team and repository tags
-        ========================
+========================
+.. image:: https://governance.openstack.org/tc/badges/python-openstackclient.svg
+:target: https://governance.openstack.org/tc/reference/tags/index.html
 
 %package bin
 Summary: bin components for the python-openstackclient package.
@@ -84,7 +83,8 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1541772029
+export SOURCE_DATE_EPOCH=1551035800
+export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
 %install
