@@ -1,24 +1,75 @@
 CHANGES
 =======
 
+3.18.0
+------
+
+* Mention compute API 2.50 in openstack quota show --class
+* Add network segment range command object
+* API microversion 2.69: Handles Down Cells
+* Paginate over usage list to return all usages
+* Add --attached / --detached parameter to volume set
+* Fix: Restore output 'VolumeBackupsRestore' object is not iterable
+* Typo fix
+* Disabling c-backup service for osc-functional-devstack-tips job
+* Add possibility to filter images using member\_status
+* Add support for get details of Quota
+* Fix help message of image add project
+* Fix help message of image add project
+* add python 3.7 unit test job
+* Remove str() when setting network objects names
+* Add py36 env
+* This fix removes an erroneous underscore found within the function named test\_snapshot\_delete within test\_snapshot.py found in both volume v1 and v2 of python-openstackclient
+* More state handling in volume transfer requests functional tests
+* fix multiple server delete produce multiple new lines
+* Add floating IP filter to floating IP list command
+* Use os-cloud instead of OS env vars for functional tests
+* Add osc repo to the base job definition
+* Remove testr.conf as it's been replaced by stestr
+* More volume functional test fixes
+* Supports router gateway IP QoS
+* Support enable/disable uplink status propagation
+* Change openstack-dev to openstack-discuss
+* Add Python 3.6 classifier to setup.cfg
+* Use devstack functional base job
+* Replace assertEqual(True/False, expr) with assertTrue/assertFalse
+* Fix i18n issue
+* Add volume backup import/export commands
+* Modify the help message for 'registered limit set'
+* Updated the take\_actions for unified limits
+
 3.17.0
 ------
 
 * Add project param in LimitList parser
+* image/v2: support multiple property filters
+* Handle multiple ports in AddFloatingIP
+* Add --name-lookup-one-by-one option to server list
+* trivial: modify spelling error of project
+* Remove invalid 'unlock-volume' migration arg
+* Update the Neutron CLI decoder document
+* Update release note version reference table
+* Make use of keystoneauth service-type filtering for versions
+* Improve document 'openstack complete'
+* Address issues from volume backend commands
 * Handle not having cinderclient.v1 available
 * Add volume backend pool list command
 * Add volume backend capability show command
 * Allow endpoint filtering on both project and project-domain
+* Add --key-name and --key-unset option for server rebuild API
 * Add --property option to 'server rebuild' command
 * Remove python-ceilometerclient
+* trivial: remove commented-out code
 * Add monascaclient to \`not plugins\` list
 * Fix some spaces in help messages
 * fix tox python3 overrides
+* Update the URL in doc
 * Fix help message for subnetpool default-quota value
 * Fix 'project purge' deleting wrong project's servers and volumes
 * Add metavar for name parameter in subnet create
 * osc-included image signing (using openstacksdk)
 * Use templates for cover and lower-constraints
+* Partially Revert "Add command to unset information from Subnet-pools"
 * add lib-forward-testing-python3 test job
 * add python 3.6 unit test job
 * switch documentation job to new PTI
@@ -61,15 +112,18 @@ CHANGES
 * Fix subnet host\_routes error
 * Do not require port argument when updating floating IP
 * Network: Add tag support for security group
+* Mention 2.51 in help for openstack server event show
 * Fix server show for microversion 2.47
 * Optimize \_prep\_server\_detail to avoid redundant find\_resource
 * Use Server.to\_dict() rather than Server.\_info
+* Add note about version 2.5 when listing servers using --ip6
 * Update role document to include system parameter
 * Fix urls in README.rst
 * Allow setting network-segment on subnet update
 * Add system role functionality
 * Fix lower-constraints.txt
 * Make max\_burst\_kbps option as optional for bw limit QoS rule
+* Don't display router's is\_ha and is\_distributed attributes always
 * Add cliff project link
 * Update command test for volume.v3
 * Prevent "server migrate --wait" from hanging
@@ -93,6 +147,7 @@ CHANGES
 * Rename python-openstacksdk to openstacksdk
 * Add support to list image members
 * Display private flavors in server list
+* Default --nic to 'auto' if creating a server with >= 2.37
 * Fix additional output encoding issues
 * Correct application credential usage doc
 * Fix crashing "console log show"
