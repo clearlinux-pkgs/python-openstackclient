@@ -1,12 +1,43 @@
 CHANGES
 =======
 
+3.19.0
+------
+
+* Add changes-before attribute to server list
+* Deprecate openstack server migrate --host option
+* Batch up minor cleanups for release
+* Serialize more aggregate functional tests
+* Compute: Add description support for server
+* Remove code migrated to osc-lib long ago
+* Aggregate functional test tweak
+* Update sphinx requirement
+* Stop leaving temp files after unit test runs
+* Blacklist Bandit 1.6.0 due to directory exclusion bug
+* Fix bug in endpoint group deletion
+* document the --timing option
+* Fix link to new opendev repo
+* Document that server dump create requires 2.17
+* Dropping the py35 testing
+* Followup opendev cleanup and test jobs
+* OpenDev Migration Patch
+* Fix docs bug link to go to storyboard rather than launchpad
+* Tweak network segment range fiunction tests
+* Before writing object data to stdout, re-open it in binary mode
+* Volume backup functional test tweak
+* Ignore case in security group rule --ethertype
+* Update master for stable/stein
+* Fix: incorrect check when no shared/private input
+* Fix service discovery in functional tests
+* Fix: set invalid None project\_id on range creation
+
 3.18.0
 ------
 
 * Mention compute API 2.50 in openstack quota show --class
 * Add network segment range command object
 * API microversion 2.69: Handles Down Cells
+* Add 'security\_group' type support to network rbac commands
 * Paginate over usage list to return all usages
 * Add --attached / --detached parameter to volume set
 * Fix: Restore output 'VolumeBackupsRestore' object is not iterable
@@ -21,6 +52,7 @@ CHANGES
 * Add py36 env
 * This fix removes an erroneous underscore found within the function named test\_snapshot\_delete within test\_snapshot.py found in both volume v1 and v2 of python-openstackclient
 * More state handling in volume transfer requests functional tests
+* Fix --limit option in image list sub-command
 * fix multiple server delete produce multiple new lines
 * Add floating IP filter to floating IP list command
 * Use os-cloud instead of OS env vars for functional tests
@@ -107,11 +139,13 @@ CHANGES
 * Adding api\_version to FakeApp
 * Fix the \`role implies list\` command
 * Fix volume type functional tests
+* Delete the LB object quotas set command in openstackclient
 * Compute: Add description support for flavor
 * compute: limit the service's force down command above 2.10
 * Fix subnet host\_routes error
 * Do not require port argument when updating floating IP
 * Network: Add tag support for security group
+* Fix RuntimeError when showing project which has extra properties
 * Mention 2.51 in help for openstack server event show
 * Fix server show for microversion 2.47
 * Optimize \_prep\_server\_detail to avoid redundant find\_resource
