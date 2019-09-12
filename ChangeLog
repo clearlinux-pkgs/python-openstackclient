@@ -1,21 +1,78 @@
 CHANGES
 =======
 
+4.0.0
+-----
+
+* Update release table for Train and 4.0.0
+* More aggregate functional race chasing
+* Add doc and relnote for review 639652
+* Default to Cinder v3 API
+* Clean up app initialization and config
+* Follow-up: fix the invalid releasenote link
+* Microversion 2.77: Support Specifying AZ to unshelve
+* Bump lower constraint of python-zunclient
+* Remove races in floating ip functional tests
+* Bump min osc-lib to 1.14.0
+* Format location columns in network commands
+* Add floating IP Port Forwarding commands
+* Bump hacking version
+* Remove token\_endpoint auth type
+* Format aggregate command fields and de-race functional tests
+* Add CLI argument tests before making changes
+* Fix functional.base.TestCase.openstack() to optionally omit --os-auth-type
+* Document 2.53 behavior for compute service list/delete
+* Add openstack server create --boot-from-volume option
+* Fix <id> description for --block-device-mapping
+* Support type=image with --block-device-mapping option
+* Fix compute service set handling for 2.53+
+* Add 'openstack server resize (confirm|revert)' commands
+* Make configuration show not require auth
+* Fix typo: "to and endpoint"
+* Fix module paths for volumev3 volume backup commands
+* openstack port create support --extra-dhcp-option
+* Mention compute service set --up|--down requires 2.11 or greater
+* Update api-ref location
+* Add host and hypervisor\_hostname to create servers
+* Support IPv6 addresses better
+* Add Python 3 Train unit tests
+* docs: clarify compute service --service option
+* Update the constraints url
+* Add Python 3 Train unit tests
+* Fix BFV server list handling with --name-lookup-one-by-one
+* Use cliff formattable columns in volume v2 commands
+* Use cliff formattable columns in volume v1 commands
+* Use cliff formattable columns in object storage commands
+* Use cliff formattable columns in image commands
+* Use cliff formattable columns in identity commands
+* Microversion 2.73: Support adding the reason behind a server lock
+* Allow "server migrate" (not live) to take "--host" option
+* Add server add/remove volume description for microversion 2.20
+* Add server event command documentation for compute API 2.21
+
 3.19.0
 ------
 
 * Add changes-before attribute to server list
 * Deprecate openstack server migrate --host option
+* Remove deprecated volume commands and args
 * Batch up minor cleanups for release
+* Remove deprecated network options
+* Remove deprecated image commands
+* Remove deprecated identity commands and args
+* Remove deprecated compute commands
 * Serialize more aggregate functional tests
 * Compute: Add description support for server
 * Remove code migrated to osc-lib long ago
 * Aggregate functional test tweak
 * Update sphinx requirement
+* Rename review.openstack.org to review.opendev.org
 * Stop leaving temp files after unit test runs
+* Use cliff formattable columns in network commands
 * Blacklist Bandit 1.6.0 due to directory exclusion bug
 * Fix bug in endpoint group deletion
 * document the --timing option
+* Change default security group protocol to 'any'
 * Fix link to new opendev repo
 * Document that server dump create requires 2.17
 * Dropping the py35 testing
