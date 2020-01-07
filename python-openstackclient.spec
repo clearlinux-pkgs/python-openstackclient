@@ -6,7 +6,7 @@
 #
 Name     : python-openstackclient
 Version  : 4.0.0
-Release  : 50
+Release  : 51
 URL      : http://tarballs.openstack.org/python-openstackclient/python-openstackclient-4.0.0.tar.gz
 Source0  : http://tarballs.openstack.org/python-openstackclient/python-openstackclient-4.0.0.tar.gz
 Source1 : http://tarballs.openstack.org/python-openstackclient/python-openstackclient-4.0.0.tar.gz.asc
