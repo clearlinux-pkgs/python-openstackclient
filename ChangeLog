@@ -1,16 +1,63 @@
 CHANGES
 =======
 
+5.0.0
+-----
+
+* Complete "Drop python2 support" goal
+* Use 'KeyValueAppendAction' from osc-lib
+* Stop silently ignoring invalid 'server create --hint' options
+* Remove mention of meetings from docs
+* Add support for app cred access rules
+* Switch to using osc\_lib.utils.tags
+* Raise flake8-import-order version to latest
+* Raise hacking to more recent 2.0.0
+* Replace six.iteritems() with .items()
+* Show correct name for resource with quota set to zero
+* Bump tox minversion
+* Fix openstack server list --deleted --marker option
+* Stop testing python 2 in tox and zuul
+* Fix router create/show if extraroute not supported
+* Provide stderr in exception when check\_parser fails
+* Microversion 2.79: Add delete\_on\_termination to volume-attach API
+* Create Volume v3 functional tests
+* Refactor AggregateTests
+* Deflate .htaccess
+* Add redirect testing
+* compute: autogenerate docs
+* openstack.cli: autogenerate docs
+* common: autogenerate docs
+* Update a stale doc reference to use :neutron-doc:
+* neutron: autogenerate docs
+* versions: Fix 'versions show' help message
+* Remove redundant OpenStackShell.prepare\_to\_run\_command
+* Use SDK to get compute API extensions
+* Fix functional tests for py3
+* Use autoprogram-cliff for remaining plugin docs
+* Doc: launchpad => storyboard
+* Link to (some) plugin doc pages
+* Add plugin doc page for watcher
+* Produce complete content for plugin docs
+* Split plugin docs per project
+* Remove plugin projects from test-requirements.txt
+* Add placement to known plugins
+* Fix plugin autodoc generation
+* Update master for stable/train
+* Fix osc-lib interface change: catch osc-lib Forbidden
+
 4.0.0
 -----
 
+* Add dns\_publish\_fixed\_ip attribute to subnets
 * Update release table for Train and 4.0.0
 * More aggregate functional race chasing
+* Add 'openstack server migrate (confirm|revert)' commands
 * Add doc and relnote for review 639652
 * Default to Cinder v3 API
 * Clean up app initialization and config
 * Follow-up: fix the invalid releasenote link
 * Microversion 2.77: Support Specifying AZ to unshelve
+* Add parent project filter for listing projects
 * Bump lower constraint of python-zunclient
 * Remove races in floating ip functional tests
 * Bump min osc-lib to 1.14.0
