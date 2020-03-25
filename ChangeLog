@@ -1,6 +1,25 @@
 CHANGES
 =======
 
+5.1.0
+-----
+
+* Honor endpoint override from config for volume
+* Remove trailing newline from dockerhub secret
+* Fix network segment range "\_get\_ranges" function
+* Change dockerhub password
+* Bump lower constraint of MarkupSafe
+* Update image building jobs
+* Allow setting floating IP description
+* Stop configuring install\_command in tox and stop use pip
+* Build utility image for using osc
+* Add "fields" parameter to ListSecurityGroup query
+* Update http links in docs
+* Disallow setting default on internal network
+* Add bindep file
+* Add storage policy option to create container command
+* Add qos\_network\_policy\_id to network port tests
+
 5.0.0
 -----
 
@@ -8,14 +27,18 @@ CHANGES
 * Use 'KeyValueAppendAction' from osc-lib
 * Stop silently ignoring invalid 'server create --hint' options
 * Remove mention of meetings from docs
+* Incorrect title for service provider
+* Fix copypaste errors in access rule command
 * Add support for app cred access rules
 * Switch to using osc\_lib.utils.tags
+* Add unit tests and release note for dns\_publish\_fixed\_ip
 * Raise flake8-import-order version to latest
 * Raise hacking to more recent 2.0.0
 * Replace six.iteritems() with .items()
 * Show correct name for resource with quota set to zero
 * Bump tox minversion
 * Fix openstack server list --deleted --marker option
+* Fix faulthy state argument choice
 * Stop testing python 2 in tox and zuul
 * Fix router create/show if extraroute not supported
 * Provide stderr in exception when check\_parser fails
@@ -201,6 +224,8 @@ CHANGES
 * fix tox python3 overrides
 * Update the URL in doc
 * Fix help message for subnetpool default-quota value
+* Now we can add description for role creation in OSC
+* Replace port 35357 with 5000 for "auth\_url"
 * Fix 'project purge' deleting wrong project's servers and volumes
 * Add metavar for name parameter in subnet create
 * osc-included image signing (using openstacksdk)
@@ -263,6 +288,7 @@ CHANGES
 * Make max\_burst\_kbps option as optional for bw limit QoS rule
 * Don't display router's is\_ha and is\_distributed attributes always
 * Add cliff project link
+* Update the content about Import Format
 * Update command test for volume.v3
 * Prevent "server migrate --wait" from hanging
 * Format port\_details field of Floating IP
