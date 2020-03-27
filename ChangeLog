@@ -1,10 +1,17 @@
 CHANGES
 =======
 
+5.2.0
+-----
+
+
 5.1.0
 -----
 
+* Don't look up project by id if given id
+* Complete switch from glanceclient to SDK for image service
 * Honor endpoint override from config for volume
+* Switch image to use SDK
 * Remove trailing newline from dockerhub secret
 * Fix network segment range "\_get\_ranges" function
 * Change dockerhub password
