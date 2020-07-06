@@ -1,6 +1,14 @@
 CHANGES
 =======
 
+5.2.1
+-----
+
+* Client should parse string to boolean for value 'is\_domain'
+* Update TOX\_CONSTRAINTS\_FILE for stable/ussuri
+* Update .gitreview for stable/ussuri
+* Fix ussuri jobs
+
 5.2.0
 -----
 
