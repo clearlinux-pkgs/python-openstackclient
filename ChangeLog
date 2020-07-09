@@ -1,13 +1,49 @@
 CHANGES
 =======
 
-5.2.1
+5.3.0
 -----
 
+* Fix uploading an signed image does not work if private signing key is encrypted
+* Add a command to trigger entrypoint cache creation
+* switch to stevedore for entry points
+* Make volume backup record commands available in v3
+* Remove enabling of glance v1 API
+* Expose flag for forcing use of import for images
+* Remove translation sections from setup.cfg
+* port: add --host to list command
+* Don't display Munch objects in the output
+* Revert "Format location columns in network commands"
+* image: autogenerate docs
+* identity: autogenerate docs
+* Remove os-client-config references
+* Add cliff to libs-from-git for devstack functional tips
+* Add OpenStack Client for Manila docs
+* Remove congress
+* Replace assertItemsEqual with assertCountEqual
 * Client should parse string to boolean for value 'is\_domain'
-* Update TOX\_CONSTRAINTS\_FILE for stable/ussuri
-* Update .gitreview for stable/ussuri
-* Fix ussuri jobs
+* Add py38 package metadata
+* Switch to newer openstackdocstheme and reno versions
+* Make container list --all work
+* Cleanup: remove a useless reference to "object"
+* Resolve PEP8
+* Correct image lookup during server rebuild
+* Add Python3 victoria unit tests
+* Update master for stable/ussuri
+* Remove Babel from requirements
+* Add '--force; parameter to 'openstack quota set'
+* Add 'subnetpool' type support to rbac commands
+* Add resource option immutable
+* Revert "Disallow setting default on internal network"
+* Use unittest.mock instead of third party mock
+* Add description field to portforwarding NAT rules
+* Support for stateless security groups
+* Cleanup Python 2.7 support
+* Add command: router add/remove route --route
+* Adding options to user cli
+* Be explicit about python version in image
+* Add libc6-dev to bindep
+* Add 'address\_scope' type support to network rbac commands
 
 5.2.0
 -----
@@ -28,6 +64,7 @@ CHANGES
 * Allow setting floating IP description
 * Stop configuring install\_command in tox and stop use pip
 * Build utility image for using osc
+* Allow os quota list query to filter by project
 * Add "fields" parameter to ListSecurityGroup query
 * Update http links in docs
 * Disallow setting default on internal network
