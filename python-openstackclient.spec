@@ -6,7 +6,7 @@
 #
 Name     : python-openstackclient
 Version  : 5.3.1
-Release  : 59
+Release  : 60
 URL      : http://tarballs.openstack.org/python-openstackclient/python-openstackclient-5.3.1.tar.gz
 Source0  : http://tarballs.openstack.org/python-openstackclient/python-openstackclient-5.3.1.tar.gz
 Source1  : http://tarballs.openstack.org/python-openstackclient/python-openstackclient-5.3.1.tar.gz.asc
